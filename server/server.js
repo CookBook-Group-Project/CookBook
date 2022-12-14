@@ -18,8 +18,8 @@ app.use(cors({
 );
 
 
-// require('./routes/recipe.routes')(app);
-// require('./routes/user.routes')(app)
+require('./routes/recipe.routes')(app);
+require('./routes/user.routes')(app)
 
 
 app.listen(PORT, ( ) => {
