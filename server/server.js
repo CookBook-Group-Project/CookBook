@@ -25,5 +25,3 @@ require('./routes/user.routes')(app)
 app.listen(PORT, ( ) => {
     console.log(`Server is up on port ${PORT}`)
 })
-
-// THIS IS A TEST
