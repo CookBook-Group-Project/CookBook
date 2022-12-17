@@ -1,6 +1,6 @@
-
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import "./App.css";
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import Login from "./components/Login";
 
 
 import NavBar from './components/Nav/Nav'
