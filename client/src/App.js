@@ -1,10 +1,11 @@
 import "./App.css";
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+//setting BrowserRouter as Router breaks the app. -CS
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Login from "./components/Login";
-
 
 import NavBar from './components/Nav/Nav'
 import Home from './components/Home/Home'
+import Home2 from "./components/Home/Home2";
 
 
 
@@ -16,7 +17,7 @@ function App() {
         <NavBar/>
             <Routes>
                 <Route path='/' element={<Home/>}/>
-                {/* <Route path='/register' element={<Register/>}/> */}
+                <Route path='/home2' element={<Home2/>}/>
                 {/* <Route path='/login' element={<Login setLoginUser={setLoginUser}/>}/> */}
                 {/* <Route path='/allRecipes' element={<DisplayAll/>}  /> */}
                 {/* <Route path='/addRecipe' element={<Form setList={setTaskList}/>}/> */}

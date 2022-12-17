@@ -2,7 +2,7 @@ import React from 'react'
 import './Nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
-import logo from './logo-black.png'
+import logo from './logo.png'
 
 const Nav = () => {
   const handleClick = () =>{
