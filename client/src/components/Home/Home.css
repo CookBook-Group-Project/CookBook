@@ -1,0 +1,152 @@
+*::-webkit-scrollbar{
+    display: none;
+}
+
+.upper{
+    position: relative;
+    overflow: hidden;
+    height: 70rem;
+    width: 100vw;
+    background-color: #E0872E;
+    z-index: 0;
+}
+
+.circle{
+    position: absolute;
+    margin-left: 68%;
+    height: 70%;
+    transform: translateY(-22rem);
+}
+
+.landing-image{
+    position: absolute;
+    transform: translateX(-26%);
+    margin-top: 10rem;
+    height: 85%;
+    width: 70%;
+    z-index: 1;
+}
+
+
+.hidden-bg{
+    position: absolute;
+    transform: translateX(30%);
+    margin-top: 10rem;
+    height: 80%;
+    width: 100%;
+    z-index: 2;
+    visibility: hidden;
+}
+
+
+.container-text{
+    position: absolute;
+    margin: 0 auto;
+    width: 60%;
+    height: 46rem;
+    padding: 10rem;
+    border-radius: 2rem;
+    margin-left: 10%;
+    transform: translateY(17rem);
+    z-index: 0;
+    background-color: #fff;
+}
+
+.container-text h1{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 8rem;
+    margin-left: 45%;
+    transform: translateY(-5rem);
+}
+
+.container-text h3{
+    margin-left: 45%;
+    transform: translateY(-5rem);
+}
+
+
+.span{
+    color:#E0872E;
+}
+
+
+@media screen and (max-width: 1292px) {
+    .container-text h1 {
+        font-size: 7rem;
+}
+}
+
+
+
+@media screen and (max-width: 1130px) {
+    .landing-image{
+        visibility: hidden;
+    }
+    .hidden-bg{
+        visibility: visible;
+        transform: translateX(20rem);
+    }
+    .container-text h1 {
+        position: fixed;
+        top: 10%;
+        left: -20rem;
+        font-size: 6rem;
+}
+    .container-text h3{
+        position: fixed;
+        margin-top: 10%;
+        left: -20rem;
+        width: 40%;
+    }
+}
+
+
+@media screen and (max-width: 770px) {
+    .hidden-bg{
+        visibility: visible;
+        transform: translateX(10%);
+    }
+    .container-text h1 {
+        position: fixed;
+        top: 10%;
+        font-size: 18px;
+        left: -40%;
+        font-size: 6rem;
+}
+    .container-text h3{
+        position: fixed;
+        margin-top: 10%;
+        left: -40%;
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width: 520px) {
+    .hidden-bg{
+        visibility: visible;
+        transform: translateX(-20%);
+        width: 50rem;
+    }
+    .container-text h1 {
+        position: fixed;
+        top: 10%;
+        left: -40%;
+        font-size: 3rem;
+}
+    .container-text h3{
+        position: fixed;
+        margin-top: 10%;
+        left: -40%;
+        width: 50%;
+    }
+}
+
+
+
+.lower{
+    height: 60rem;
+    width: 100vw;
+    background-color: #fff;
+}
