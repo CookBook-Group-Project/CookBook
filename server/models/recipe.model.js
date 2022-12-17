@@ -51,12 +51,12 @@ const RecipeSchema = new mongoose.Schema({
 
     postedBy:{
         type: String,
-        required:[true, "Must be logged in to post a mood."]
+        // required:[true, "Must be logged in to post a mood."]
     },
 
     postedByID:{
         type: String,
-        required:[true, "Must be logged in to post a mood."]
+        // required:[true, "Must be logged in to post a mood."]
     }
     // user:{
     //     type: mongoose.Schema.Types.ObjectId,
