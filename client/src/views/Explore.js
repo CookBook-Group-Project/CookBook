@@ -1,5 +1,5 @@
 import React from 'react'
-import RecipeCard from './components/RecipeCard'
+import RecipeCard from '../components/RecipeCard'
 
 const Explore = () => {
   return (
