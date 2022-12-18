@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState, useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 import { NavLink, useNavigate } from 'react-router-dom';
 import './Nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +9,13 @@ import axios from 'axios'
 
 const Nav = () => {
 
+const { loggedUser, setLoggedUser} = useContext(UserContext);
+
 const navigate = useNavigate()
+
+// useEffect((e) => {
+//   setLoggedUser(loggedUser)
+// }, [loggedUser]);
 
   const handleClick = () =>{
     const showBtn = document.querySelector(".btn-bars"),
@@ -20,7 +27,6 @@ const navigate = useNavigate()
   closeBtn.addEventListener("click", () => {
     navMenu.classList.remove("showMenu");
   });
-
   }
 
   const handleLogout = (e) => {
@@ -28,7 +34,7 @@ const navigate = useNavigate()
     .get("http://localhost:8000/api/logout", { withCredentials: true })
     .then((res) => {
       console.log("Logged out on front end");
-      // setLoggedUser("");
+      setLoggedUser("");
       navigate("/");
     })
     .catch((err) => {
@@ -48,14 +54,15 @@ const navigate = useNavigate()
           <i class='bx bx-x'></i>
         </span>
         <ul class="navbar-nav">
+          <p>{loggedUser.username}</p>
           <li class="nav-item">
-            <a href="#" class="nav-link">Explore Recipes</a>
+          <NavLink to='/explore' className='nav-link'>Explore Recipes</NavLink>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">Your Recipes</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Add A Recipe</a>
+          <NavLink to='/addRecipe' className='nav-link'>Add A Recipe</NavLink>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">Settings</a>
