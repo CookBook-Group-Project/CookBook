@@ -322,4 +322,9 @@ svg {
   transform: translateX(-50%) translateY(100%);
 }
 
+
+
+/* change to 100% to remove bottom gap on bottom of home page  */
+/* .full-height {height:100%;background:white;} */
+
 .full-height {height:100vh;background:white;}

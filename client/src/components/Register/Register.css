@@ -1,0 +1,99 @@
+.bg{
+    background: url('./Images/register-bg2.avif');
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    background-color: #E0872E;
+    z-index: 0;
+}
+
+.register-form{
+    width: 55%;
+    padding: 7rem;
+    border-radius: 2rem;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    background-color: #E0872E;
+    border: 1px solid #fff;
+    z-index: 2;
+}
+
+.register-form input{
+    width: 60%;
+}
+
+.register-form button{
+    position: absolute;
+    right: 3rem;
+    font-size: 2rem;
+    bottom: 2rem;
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+
+.registration-title,.login-title{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+label,input{
+    margin-left: 9%;
+}
+
+
+.tab{
+    width: 55%;
+    height: 60%;
+    padding: 4rem;
+    border-radius: 2rem;
+    position: absolute;
+    top: 27%;
+    right: 3%;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.tab input{
+    width: 60%;
+}
+
+.tab label{
+    margin-top: 2rem;
+}
+
+.login-form button{
+    position: absolute;
+    right: 15%;
+    bottom: 25%;
+    font-size: 2rem;
+
+}
+
+.already{
+    position: absolute;
+    font-size: 2rem;
+    right: 1.8rem;
+    bottom: 0.3rem;
+    cursor: pointer;
+}
+
+.already:hover{
+    scale: 1.08;
+}
+
+.register{
+    position: absolute;
+    font-size: 3rem;
+    left: 1rem;
+    writing-mode: vertical-rl;
+    text-orientation:upright;
+    cursor: pointer;
+    color: #fff;
+}

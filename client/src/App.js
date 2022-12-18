@@ -5,12 +5,15 @@ import { useState, useEffect } from "react";
 import { UserContext } from "./contexts/UserContext";
 import axios from 'axios'
 import Login from "./components/Login";
-import Register from "./components/Register";
+import Register from "./components/Register/Register";
 import NavBar from './components/Nav/Nav'
 import Home from './components/Home/Home'
 import Explore from "./views/Explore";
 import AddRecipe from './components/AddRecipe'
 import RecipeCard from "./components/RecipeCard";
+
+
+
 
 function App() {
   const [loggedUser, setLoggedUser] = useState("");
