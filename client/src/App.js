@@ -6,6 +6,7 @@ import Register from "./components/Register";
 import NavBar from './components/Nav/Nav'
 import Home from './components/Home/Home'
 import Home2 from "./components/Home/Home2";
+import Explore from "./views/Explore";
 
 function App() {
   return (
@@ -13,10 +14,11 @@ function App() {
       <BrowserRouter>
         <NavBar/>
         <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/home2' element={<Home2/>}/>
-            <Route path='/login' element={<Login/>}/>
-            <Route path='/register' element={<Register/>}/>
+            <Route path='/' element={<Home/>} />
+            <Route path='/home2' element={<Home2/>} />
+            <Route path='/login' element={<Login/>} />
+            <Route path='/register' element={<Register/>} />
+            <Route path='/explore' element={<Explore/>} />
             {/* <Route path='/login' element={<Login setLoginUser={setLoginUser}/>}/> */}
             {/* <Route path='/allRecipes' element={<DisplayAll/>}  /> */}
             {/* <Route path='/addRecipe' element={<Form setList={setTaskList}/>}/> */}
