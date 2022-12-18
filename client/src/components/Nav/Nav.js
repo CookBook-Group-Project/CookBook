@@ -4,8 +4,10 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import './Nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
-import logo from './logo.png'
+import logo from './Images/logo.png'
 import axios from 'axios'
+
+
 
 const Nav = () => {
 
@@ -67,12 +69,15 @@ const navigate = useNavigate()
           <li class="nav-item">
             <a href="#" class="nav-link">Settings</a>
           </li>
+          {loggedUser? 
           <li class="nav-item">
             <NavLink to='/login' className='nav-link'>Log In</NavLink>
           </li>
+          :
           <li class="nav-item">
             <a href="#" onClick={handleLogout} class="nav-link">Log Out</a>
           </li>
+          }
         </ul>
       <div class="nav-social-icon">
         <a href="#"><i class='bx bxl-facebook-circle'></i></a>

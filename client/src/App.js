@@ -8,7 +8,6 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import NavBar from './components/Nav/Nav'
 import Home from './components/Home/Home'
-import Home2 from "./components/Home/Home2";
 import Explore from "./views/Explore";
 import AddRecipe from './components/AddRecipe'
 import RecipeCard from "./components/RecipeCard";
@@ -38,7 +37,6 @@ function App() {
         <NavBar/>
         <Routes>
             <Route path='/' element={<Home/>} />
-            <Route path='/home2' element={<Home2/>} />
             <Route path='/login' element={<Login/>} />
             <Route path='/register' element={<Register/>} />
             <Route path='/explore' element={<Explore/>} />
