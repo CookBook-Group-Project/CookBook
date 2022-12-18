@@ -51,3 +51,6 @@ export const AddRecipe = () => {
         </div>
     )
 }
+
+
+export default AddRecipe
