@@ -43,7 +43,10 @@ const Nav = () => {
             <a href="#" class="nav-link">Settings</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link"> Log In || Log Out</a>
+            <a href="#" class="nav-link"> Log In</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Log Out</a>
           </li>
         </ul>
       <div class="nav-social-icon">

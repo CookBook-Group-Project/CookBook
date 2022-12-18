@@ -28,8 +28,7 @@ const Register = () => {
     }
 
     return (
-        <div className='container bg-secondary bg-opacity-25 rounded p-4 mt-5' style={{width:"400px"}}>
-            <h2 className='text-center'>Register</h2>
+        <div style={{paddingTop: "100px"}}>
             <form className='mx-auto d-flex flex-column' onSubmit={registrationHandler}>
                 <label>Username:</label>
                 <input type='text' className='form-control' onChange={(e) => setUsername(e.target.value)}></input>
