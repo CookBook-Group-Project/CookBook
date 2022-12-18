@@ -1,11 +1,15 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './Nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import logo from './logo.png'
+import axios from 'axios'
 
 const Nav = () => {
+
+const navigate = useNavigate()
+
   const handleClick = () =>{
     const showBtn = document.querySelector(".btn-bars"),
     closeBtn = document.querySelector(".btn-close"),
@@ -17,6 +21,19 @@ const Nav = () => {
     navMenu.classList.remove("showMenu");
   });
 
+  }
+
+  const handleLogout = (e) => {
+    axios
+    .get("http://localhost:8000/api/logout", { withCredentials: true })
+    .then((res) => {
+      console.log("Logged out on front end");
+      // setLoggedUser("");
+      navigate("/");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }
 
 
@@ -47,7 +64,7 @@ const Nav = () => {
             <NavLink to='/login' className='nav-link'>Log In</NavLink>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Log Out</a>
+            <a href="#" onClick={handleLogout} class="nav-link">Log Out</a>
           </li>
         </ul>
       <div class="nav-social-icon">

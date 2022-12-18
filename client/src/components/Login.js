@@ -19,7 +19,7 @@ const Login = () => {
         },{withCredentials:true, credentials:'include'})
         .then((res) => {
             console.log("User logged in")
-            navigate('/main')
+            navigate('/explore')
         }).catch((err) => {
             console.log(err)
             setErrors(err.response.data.error)
