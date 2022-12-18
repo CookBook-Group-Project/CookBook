@@ -49,18 +49,19 @@ const RecipeSchema = new mongoose.Schema({
         type: String
     },
 
-    postedBy:{
-        type: String,
-        // required:[true, "Must be logged in to post a recipe."]
-    },
-
-    postedByID:{
-        type: String,
-        // required:[true, "Must be logged in to post a recipe."]
+    creator:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     }
-    // user:{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'User'
+    
+    // postedBy:{
+    //     type: String,
+    //     // required:[true, "Must be logged in to post a recipe."]
+    // },
+
+    // postedByID:{
+    //     type: String,
+    //     // required:[true, "Must be logged in to post a recipe."]
     // }
 
 },
