@@ -11,6 +11,7 @@ import Home from './components/Home/Home'
 import Explore from "./views/Explore";
 import AddRecipe from './components/AddRecipe'
 import RecipeCard from "./components/RecipeCard";
+import { UpdateRecipe } from "./components/UpdateRecipe";
 
 
 
@@ -50,6 +51,7 @@ function App() {
             {/* <Route path='/allRecipes' element={<DisplayAll/>}  /> */}
             {/* <Route path='/addRecipe' element={<Form setList={setTaskList}/>}/> */}
             <Route path='/addRecipe' element={<AddRecipe/>}/>
+            <Route path='/update/:id' element={<UpdateRecipe/>}/>
             {/* <Route path='/oneRecipe/:id' element={<OneRecipe/>}/> */}
             {/* <Route path='/edit/:id' element={<EditForm />}/> */}
         </Routes>
