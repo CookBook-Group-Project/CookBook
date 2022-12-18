@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import './Nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
@@ -43,7 +44,7 @@ const Nav = () => {
             <a href="#" class="nav-link">Settings</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link"> Log In</a>
+            <NavLink to='/login' className='nav-link'>Log In</NavLink>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">Log Out</a>
