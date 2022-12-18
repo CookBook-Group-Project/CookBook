@@ -11,6 +11,7 @@ import Home from './components/Home/Home'
 import Home2 from "./components/Home/Home2";
 import Explore from "./views/Explore";
 import AddRecipe from './components/AddRecipe'
+import RecipeCard from "./components/RecipeCard";
 
 function App() {
   const [loggedUser, setLoggedUser] = useState("");
@@ -41,6 +42,9 @@ function App() {
             <Route path='/login' element={<Login/>} />
             <Route path='/register' element={<Register/>} />
             <Route path='/explore' element={<Explore/>} />
+            {/* Recipe card path added to test out its development */}
+            <Route path='/card' element={<RecipeCard/>} />
+
             {/* <Route path='/login' element={<Login setLoginUser={setLoginUser}/>}/> */}
             {/* <Route path='/allRecipes' element={<DisplayAll/>}  /> */}
             {/* <Route path='/addRecipe' element={<Form setList={setTaskList}/>}/> */}
