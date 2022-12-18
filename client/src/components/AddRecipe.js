@@ -1,7 +1,14 @@
-import React, {useState} from 'react'
+import React, { useEffect, useState, useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
 export const AddRecipe = () => {
+
+    const { loggedUser, setLoggedUser} = useContext(UserContext);
+
+    const navigate = useNavigate()
+
     const [newRecipe,setNewRecipe] = useState([]);
     const [title,setTitle] = useState('');
     const [instructions,setInstructions] = useState('');
@@ -15,11 +22,13 @@ export const AddRecipe = () => {
             title,
             ingredients,
             instructions,
-            cookTime
+            cookTime,
+            creator: loggedUser.id
         })
         .then(response => {
             console.log(response.data)
             setNewRecipe([...newRecipe,response.data])
+
         })
         .catch(error => {
             console.log(error, 'failed to add')
