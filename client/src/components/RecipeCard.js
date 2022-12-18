@@ -2,8 +2,9 @@ import React from 'react'
 
 const RecipeCard = (props) => {
 
+    //@CHRIS - Go ahead and delete all the styling down there. I've just been using it to help visualize what's being built. - GL 17DEC2022
     //We pull down the list of all recipes via props so that cards can be generated for each.
-    const {recipes} = props
+    const {recipe} = props
 
     //Placeholder style for the card container
     const cardStyle = {
@@ -30,7 +31,7 @@ const RecipeCard = (props) => {
 
             {/* Recipe cards that will be mapped out on the screen */}
             <div style={cardStyle}>
-                <p>Recipe Name</p>
+                <p>{recipe.title}</p>
                 <img style={imageStyle} src='https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg' alt="Recipe image"/>
             </div>
         </div>
