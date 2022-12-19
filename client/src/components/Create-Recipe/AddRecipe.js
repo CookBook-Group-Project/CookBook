@@ -52,10 +52,12 @@ export const AddRecipe = () => {
 
     return (
         <div className="add-bg">
+            <div className="error-container">
+                {errors.map((error,index) => <p key = {index}>{error}</p>)}
+            </div>
             <form onSubmit={addRecipe} className="add-form">
             <div className="add-left">
             <h1 className="add-title">Add a <span className="add-span">recipe.</span></h1>
-                {errors.map((error,index) => <p key = {index}>{error}</p>)}
                 
                 <label className="">Recipe Name</label>
                     <input type = 'text' value={title} onChange = {(e) => setTitle(e.target.value)}/>
@@ -70,7 +72,7 @@ export const AddRecipe = () => {
                 <hr></hr>
 
                 <label className="">Cook Time</label>
-                    <input type = 'text' value={cookTime} onChange = {(e) => setCooKTime(e.target.value)}/>
+                    <input type = 'text' value={prepTime} onChange = {(e) => setCooKTime(e.target.value)}/>
             </div>
 
             <div className="add-right">
