@@ -88,7 +88,7 @@ const navigate = useNavigate()
   </div>
   </nav>
     <section class="main">
-      <a href="#" class="site-name">
+      <a href="/" class="site-name">
       <img src={logo} alt='logo' className='logo'></img>
         CookBook 
         <span>.</span>

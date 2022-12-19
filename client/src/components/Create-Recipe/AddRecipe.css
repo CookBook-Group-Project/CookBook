@@ -1,0 +1,109 @@
+
+hr{
+    border-block-end: 4px solid #fff;
+    width: 90%;
+}
+
+
+
+.add-bg{
+    background: url('./Images/add-bg.png');
+    height: 90rem;
+    overflow: hidden;
+    width: 100vw;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    background-color: #E0872E;
+    z-index: 0;
+}
+
+.add-form{
+    display: flex;
+    color: #272727;
+
+}
+
+.add-title{
+    font-size: 4rem;
+    padding: 1rem;
+    margin-left: 1rem;
+    font-weight: bold;
+}
+
+.add-span{
+    color: #fff;
+}
+
+.add-left{
+    background-color: #E0872E;
+    border-radius: 2rem;
+    height: 73rem;
+    margin-top: 12rem;
+    width: 40%;
+    position: absolute;
+    transform: translateY(10%);
+    min-width: 50rem;
+}
+
+.add-left label{
+    font-size: 3rem;
+}
+
+.add-right{
+    background-color: #E0872E;
+    width: 40%;
+    height: 76rem;
+    border-radius: 2rem;
+    position: absolute;
+    right: -2rem;
+    top: -6rem;
+    transform: translateY(10%);
+    min-width: 31rem;
+}
+
+@media screen and (max-width: 800px) {
+    .add-title{
+        font-size: 18px;
+    }
+    .add-right{
+    background-color:#272727;
+    color: #E0872E
+    }
+    .button{
+        background-color: transparent;
+    }
+  }
+
+.file-input{
+    font-size: 2.5rem;
+    color: #fff;
+    font-style: italic;
+}
+
+.add-right label{
+    font-size: 3rem;
+}
+
+.add-right textarea{
+    margin-left: 10%;
+    border-radius: 0.5rem;
+    height: 15rem;
+    width: 25rem;
+    font-size: 16px;
+}
+
+.add-right-container{
+    margin-top: 16rem;
+}
+
+
+.button{
+    position: absolute;
+    bottom: 2rem;
+    right: 4rem;
+    background-color: #E0872E;
+    padding: 1rem;
+}
+
+

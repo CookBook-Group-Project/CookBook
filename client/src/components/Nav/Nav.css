@@ -180,9 +180,9 @@ transform: translateX(0);
 }
 
 .logo{
-  height: 5rem;
-  scale: 10;
+  scale: 2.5;
   cursor: default;
+  z-index: -100;
 }
 
 

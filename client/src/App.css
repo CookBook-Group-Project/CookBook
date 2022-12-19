@@ -7,3 +7,8 @@
 html{
   font-size: 62.5%;
 }
+
+input{
+  border-radius: 1.6rem;
+  opacity: 0.9;
+}

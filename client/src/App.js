@@ -9,7 +9,7 @@ import Register from "./components/Register/Register";
 import NavBar from './components/Nav/Nav'
 import Home from './components/Home/Home'
 import Explore from "./views/Explore";
-import AddRecipe from './components/AddRecipe'
+import AddRecipe from './components/Create-Recipe/AddRecipe'
 import RecipeCard from "./components/RecipeCard";
 import { UpdateRecipe } from "./components/UpdateRecipe";
 
@@ -38,7 +38,7 @@ function App() {
     <div className="App">
       <UserContext.Provider value={{loggedUser, setLoggedUser}}>
       <BrowserRouter>
-        {/* <NavBar/> */}
+        <NavBar/>
         <Routes>
             <Route path='/' element={<Home/>} />
             <Route path='/login' element={<Login/>} />
