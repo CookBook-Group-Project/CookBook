@@ -61,11 +61,11 @@ hr{
 .add-right{
     background-color: #E0872E;
     width: 40%;
-    height: 76rem;
+    height: 78rem;
     border-radius: 2rem;
     position: absolute;
     right: -2rem;
-    top: -10rem;
+    top: -8rem;
     transform: translateY(10%);
     min-width: 31rem;
     padding: 2rem;

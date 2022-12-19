@@ -28,10 +28,10 @@ const RecipeCard = (props) => {
         <div>
             {/*Grant 17DEC2022 - The block below is used to help see work being done on the component due to the navigation styling. This can be deleted once complete. */}
             <div style={{height:"90px", background: "white"}}></div>
-
+            <h1>TEST</h1>
             {/* Recipe cards that will be mapped out on the screen */}
             <div style={cardStyle}>
-                <p>{recipe.title}</p>
+                {/* <p>{recipe.title}</p> 12/19 CS commented out, threw error can not read 'title' */}
                 {/* <p>{recipe.creator}</p> 12/18 PS testing */}
                 {/* <p>{recipe.creator.username}</p> 12/18 PS testing */}
                 <img style={imageStyle} src='https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg' alt="Recipe image"/>

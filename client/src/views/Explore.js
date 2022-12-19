@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import RecipeCard from '../components/RecipeCard'
+import RecipeCard from '../components/Recipe-Card/RecipeCard'
 
 const Explore = () => {
 

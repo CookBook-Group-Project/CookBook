@@ -74,7 +74,7 @@ export const AddRecipe = () => {
                 <hr></hr>
 
                 <label className="">Cook Time</label>
-                    <input type = 'text' value={prepTime} onChange = {(e) => setCooKTime(e.target.value)}/>
+                    <input type = 'text' value={prepTime} onChange = {(e) => setPrepTime(e.target.value)}/>
             </div>
 
             <div className="add-right">
@@ -84,11 +84,16 @@ export const AddRecipe = () => {
                     <hr></hr>
 
                     <label className="">Ingredients</label>
-                        <textarea type= 'text' value={ingredients} onChange = {(e) => setIngredients(e.target.value)}/>
+                        <textarea type= 'text' 
+                            value={ingredients} 
+                            onChange = {(e) => setIngredients(e.target.value)}/>
                     <hr></hr>
 
                     <label>Instructions</label>
-                        <textarea type = 'text' value={instructions} onChange = {(e) => setInstructions(e.target.value)}/>
+                        <textarea type = 'text' 
+                        value={instructions} 
+                        placeholder=''
+                        onChange = {(e) => setInstructions(e.target.value)}/>
                 </div>
             </div>
                 <input type='submit' className="button"></input>
