@@ -3,6 +3,7 @@ import { UserContext } from "../../contexts/UserContext";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import './AddRecipe.css'
+import Nav from "../Nav/Nav";
 
 export const AddRecipe = () => {
 
@@ -52,6 +53,7 @@ export const AddRecipe = () => {
 
     return (
         <div className="add-bg">
+        <Nav></Nav>
             <div className="error-container">
                 {errors.map((error,index) => <p key = {index}>{error}</p>)}
             </div>

@@ -70,9 +70,9 @@
 }
 
 
-.tab{
+.login-tab{
     width: 55%;
-    height: 55%;
+    height: 38%;
     padding: 4rem;
     border-radius: 2rem;
     position: absolute;
@@ -84,32 +84,28 @@
 }
 
 
-.already{
+.login-already{
     position: absolute;
+    font-size: 2rem;
     right: 1.8rem;
     bottom: 0.3rem;
-    cursor: pointer;
-    font-size: 2rem;
+    cursor: default;
 }
 
 
-.already:hover{
-    scale: 1.08;
-}
-
-.login-span{
+.register-span{
     cursor: pointer;
     color: #272727;
     opacity: 0.7;
 }
 
-.login-span a{
+.register-span a{
     font-size: 3rem;
     text-decoration: none;
     padding: 0.5rem;
 }
 
-.login-span a:hover{
+.register-span a:hover{
     color: #E0872E;
     opacity: 1;
 }

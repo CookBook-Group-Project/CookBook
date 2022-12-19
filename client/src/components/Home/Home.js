@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import './Home.css'
+import Nav from '../Nav/Nav'
 
 import circle from './Images/orange-circle.png'
 import family from './Images/family.png'
@@ -19,6 +20,7 @@ const Home = () => {
     <div className='bg'>
 
     {/* Top - Image */}
+    <Nav></Nav>
       <img src={circle} alt='circle' className='orange-circle'></img>
         <div class="container">
           <img class="smoke" src= "https://www.dif.co.th/wp-content/uploads/revslider/sport-smoke.png" alt='smoke'/>

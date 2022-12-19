@@ -4,7 +4,7 @@ import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import { useState, useEffect } from "react";
 import { UserContext } from "./contexts/UserContext";
 import axios from 'axios'
-import Login from "./components/Login";
+import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import NavBar from './components/Nav/Nav'
 import Home from './components/Home/Home'
@@ -38,7 +38,8 @@ function App() {
     <div className="App">
       <UserContext.Provider value={{loggedUser, setLoggedUser}}>
       <BrowserRouter>
-        <NavBar/>
+      {/* Nav bar will be imported into every component directly for access to useContext  */}
+        {/* <NavBar/> */}
         <Routes>
             <Route path='/' element={<Home/>} />
             <Route path='/login' element={<Login/>} />

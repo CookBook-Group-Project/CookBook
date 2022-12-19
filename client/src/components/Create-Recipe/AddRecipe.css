@@ -51,6 +51,7 @@ hr{
     position: absolute;
     transform: translateY(10%);
     min-width: 50rem;
+    padding: 4rem;
 }
 
 .add-left label{
@@ -67,6 +68,7 @@ hr{
     top: -10rem;
     transform: translateY(10%);
     min-width: 31rem;
+    padding: 2rem;
 }
 
 @media screen and (max-width: 800px) {
