@@ -44,18 +44,20 @@ export const AddRecipe = () => {
 
     return (
         <div>
-            <form onSubmit={addRecipe}>
+            {/*Grant 17DEC2022 - I added the block below to help see work being done on the component due to the navigation styling. This can be deleted once complete. */}
+            <div style={{height:"90px", background: "white"}}></div>
+            <form onSubmit={addRecipe} className="col-6 d-flex flex-column">
                 {errors.map((error,index) => <p key = {index}>{error}</p>)}
-                <label>Recipe Name</label>
-                <input type = 'text' placeholder='Name' value={title} onChange = {(e) => setTitle(e.target.value)}/>
-                <label>Ingredients</label>
-                <input type = 'text' placeholder='Name' value={ingredients} onChange = {(e) => setIngredients(e.target.value)}/>
-                <label>Instructions</label>
+                <label className="mt-2">Recipe Name</label>
+                <input type = 'text' value={title} onChange = {(e) => setTitle(e.target.value)}/>
+                <label className="mt-2">Ingredients</label>
+                <input type = 'text' value={ingredients} onChange = {(e) => setIngredients(e.target.value)}/>
+                <label className="mt-2">Instructions</label>
                 <input type = 'textarea' value={instructions} onChange = {(e) => setInstructions(e.target.value)}/>
-                <label>Estimated Cooking Time</label>
+                <label className="mt-2">Estimated Cooking Time</label>
                 <input type = 'text' value={cookTime} onChange = {(e) => setCooKTime(e.target.value)}/>
-                <input type = 'image' />
-                <input type = 'submit'/>
+                <input type ='file' className="mt-4"/>
+                <input type = 'submit' className="mt-4"/>
             </form>
         </div>
     )

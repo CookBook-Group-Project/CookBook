@@ -38,7 +38,7 @@ function App() {
     <div className="App">
       <UserContext.Provider value={{loggedUser, setLoggedUser}}>
       <BrowserRouter>
-        <NavBar/>
+        {/* <NavBar/> */}
         <Routes>
             <Route path='/' element={<Home/>} />
             <Route path='/login' element={<Login/>} />
