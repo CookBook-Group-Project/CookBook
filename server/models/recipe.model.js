@@ -52,7 +52,7 @@ const RecipeSchema = new mongoose.Schema({
     creator:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required:[true, 'Must be logged in to add a recipe.'],
+        // required:[true, 'Must be logged in to add a recipe.'],
     }
     
     // postedBy:{

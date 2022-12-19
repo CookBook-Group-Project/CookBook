@@ -69,7 +69,7 @@ const navigate = useNavigate()
           <li class="nav-item">
             <a href="#" class="nav-link">Settings</a>
           </li>
-          {loggedUser? 
+          {!loggedUser? 
           <li class="nav-item">
             <NavLink to='/login' className='nav-link'>Log In</NavLink>
           </li>

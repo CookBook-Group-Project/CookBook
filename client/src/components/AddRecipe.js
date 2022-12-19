@@ -28,7 +28,7 @@ export const AddRecipe = () => {
         .then(response => {
             console.log(response.data)
             setNewRecipe([...newRecipe,response.data])
-
+            navigate('/explore')
         })
         .catch(error => {
             console.log(error, 'failed to add')

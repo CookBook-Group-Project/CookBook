@@ -41,7 +41,7 @@ const Register = () => {
             navigate('/explore')
         }).catch((err) => {
             console.log(err)
-            setErrors(err.response.data.error)
+            setErrors(err.response.data.errors)
         })
     }
 
@@ -97,7 +97,7 @@ const Register = () => {
                 <label className='mt-2'>Password:</label>
                 <input type='password' className='form-control' autoComplete='password' onChange={(e) => setPassword(e.target.value)}></input>
                 <button className='btn btn-primary'>Login</button>
-                <p className='text-danger mt-4 p-0'>{errors}</p>
+                {/* <p className='text-danger mt-4 p-0'>{errors}</p> */}
             </form>
             <h4 className='already' onClick={handleLogin}>Already registered? Login</h4>
             </div>

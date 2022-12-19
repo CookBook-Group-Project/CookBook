@@ -24,7 +24,7 @@ function App() {
       .get("http://localhost:8000/api/getLoggedUser", { withCredentials: true })
       .then(
         (res) => (
-          console.log(res),
+          // console.log(res),
           setLoggedUser({
             id: res.data.user._id,
             username: res.data.user.username,

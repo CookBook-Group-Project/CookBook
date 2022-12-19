@@ -25,14 +25,16 @@ module.exports = {
 
     addRecipe: async (req,res)=> {
         try{
+            console.log(req.body)
             const newRecipe = new Recipe(req.body);
             await newRecipe.save();
-            const recipeCreator = await User.findById({_id: newRecipe.creator});
+            // const recipeCreator = await User.findById({_id: newRecipe.creator});
             // let creatorPush = recipeCreator.recipes.push(newRecipe);
-            recipeCreator.recipes.push(newRecipe)
+            // recipeCreator.recipes.push(newRecipe)
             // await recipeCreator.updateOne()
-            await recipeCreator.save({validateBeforeSave:false});
-            res.status(200).json({success:true, data:newRecipe, user:recipeCreator});
+            // await recipeCreator
+            // await recipeCreator.save({validateBeforeSave:false});
+            res.status(200).json({success:true, data:newRecipe, user:newRecipe.creator.username});
         } catch(err){
             console.log(err);
             res.status(400).json(err);

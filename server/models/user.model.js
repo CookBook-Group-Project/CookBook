@@ -31,7 +31,6 @@ const UserSchema = new mongoose.Schema({
     recipes:[{
         type: mongoose.Schema.Types.ObjectId,
         ref:'Recipe'
-
     }]
 
 }, {timestamps:true})
@@ -53,7 +52,7 @@ UserSchema.pre('validate', function(next){
 UserSchema.pre('save', async function(next){
     try{
         const hashedPassword = await bcrypt.hash(this.password,10)
-        // console.log('Hashed password:', hashedPassword)
+        console.log('Hashed password:', hashedPassword)
         this.password = hashedPassword
         next()
     }catch{
