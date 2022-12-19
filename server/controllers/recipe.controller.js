@@ -28,12 +28,12 @@ module.exports = {
             console.log(req.body)
             const newRecipe = new Recipe(req.body);
             await newRecipe.save();
-            // const recipeCreator = await User.findById({_id: newRecipe.creator});
+            const recipeCreator = await User.findById({_id: newRecipe.creator});
             // let creatorPush = recipeCreator.recipes.push(newRecipe);
-            // recipeCreator.recipes.push(newRecipe)
+            let recipeArray = recipeCreator.recipes
             // await recipeCreator.updateOne()
             // await recipeCreator
-            // await recipeCreator.save({validateBeforeSave:false});
+            await recipeCreator.updateOne({_id: newRecipe.creator, recipes:[...recipeArray, newRecipe]});
             res.status(200).json({success:true, data:newRecipe, user:newRecipe.creator.username});
         } catch(err){
             console.log(err);

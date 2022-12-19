@@ -32,6 +32,8 @@ const RecipeCard = (props) => {
             {/* Recipe cards that will be mapped out on the screen */}
             <div style={cardStyle}>
                 <p>{recipe.title}</p>
+                {/* <p>{recipe.creator}</p> 12/18 PS testing */}
+                {/* <p>{recipe.creator.username}</p> 12/18 PS testing */}
                 <img style={imageStyle} src='https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg' alt="Recipe image"/>
             </div>
         </div>
