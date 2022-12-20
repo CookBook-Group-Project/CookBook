@@ -11,6 +11,7 @@ import Explore from "./views/Explore";
 import AddRecipe from './components/Create-Recipe/AddRecipe'
 import RecipeCard from "./components/Recipe-Card/RecipeCard";
 import {UpdateRecipe}  from "./components/Update-Recipe/UpdateRecipe";
+import { UserRecipes } from "./components/UserRecipes";
 
 // import NavBar from './components/Nav/Nav'
 
@@ -28,6 +29,7 @@ function App() {
           setLoggedUser({
             id: res.data.user._id,
             username: res.data.user.username,
+            recipes: res.data.user.recipes
           })
         )
       )
@@ -47,7 +49,7 @@ function App() {
             <Route path='/explore' element={<Explore/>} />
             {/* Recipe card path added to test out its development */}
             <Route path='/card' element={<RecipeCard/>} />
-
+            <Route path = '/recipes/loggedUser/:id' element={<UserRecipes/>}/>
             {/* <Route path='/login' element={<Login setLoginUser={setLoginUser}/>}/> */}
             {/* <Route path='/allRecipes' element={<DisplayAll/>}  /> */}
             {/* <Route path='/addRecipe' element={<Form setList={setTaskList}/>}/> */}

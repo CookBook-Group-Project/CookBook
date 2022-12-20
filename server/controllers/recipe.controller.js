@@ -65,6 +65,17 @@ module.exports = {
             console.log(err)
             res.status(400).json(err)
         })
+    },
+
+    findUser: (request,response) => {
+        Recipe.find({creator:request.params.id})
+        .then(recipes => {
+            response.json(recipes)
+        })
+        .catch(error => {
+            console.log(error)
+            response.status(400).json(error)
+        })
     }
 
 }

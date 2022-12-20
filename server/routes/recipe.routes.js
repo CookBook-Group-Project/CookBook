@@ -10,6 +10,7 @@ module.exports = (app) => {
     app.get('/api/allRecipes', RecipeController.getAllRecipes)
     app.get('/api/recipe/:id', RecipeController.getOneRecipe)
     app.post('/api/addRecipe', RecipeController.addRecipe)
+    app.get('/api/recipe/user/:id', RecipeController.findUser)
     app.put('/api/update/:id', RecipeController.updateRecipe)
     app.delete('/api/delete/:id', RecipeController.deleteRecipe)
 }

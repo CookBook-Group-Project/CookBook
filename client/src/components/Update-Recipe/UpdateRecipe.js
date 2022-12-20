@@ -10,6 +10,7 @@ export const UpdateRecipe = () => {
     const [cookTime,setCooKTime] = useState('');
     const [ingredients,setIngredients] = useState('')
     const [errors, setErrors] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios.get(`http://localhost:8000/api/recipe/${id}`)
@@ -23,11 +24,11 @@ export const UpdateRecipe = () => {
         .catch(error => {
             console.log(error)
         })
-    })
+    },[])
 
     const updateRecipe = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:8000/api/recipe/${id}`, {
+        axios.put(`http://localhost:8000/api/update/${id}`, {
             title,
             instructions,
             ingredients,
@@ -35,6 +36,7 @@ export const UpdateRecipe = () => {
         })
         .then(response => {
             console.log(response)
+            navigate('/explore')
         })
         .catch(error => {
             console.log(error, 'failed to update')
