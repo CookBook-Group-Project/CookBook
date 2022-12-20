@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import RecipeCard from '../components/Recipe-Card/RecipeCard'
+import RecipeTile from '../components/RecipeTile'
 import Nav from '../components/Nav/Nav'
 
 const Explore = () => {
@@ -20,13 +20,15 @@ const Explore = () => {
 
   return (
     <div>
-      <Nav />
+      {/* <Nav/> */}
       {
-        recipes.map((recipe) => (
+        recipes.map(
+          (recipe) => (
           <div key={recipe._id}>
-            <RecipeCard recipe={recipe}/>
+            <RecipeTile recipe={recipe}/>
           </div>
-        ))
+          )
+        )
       }
     </div>
 
