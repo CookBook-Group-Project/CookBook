@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import RecipeCard from '../components/Recipe-Card/RecipeCard'
+import Nav from '../components/Nav/Nav'
 
 const Explore = () => {
 
@@ -19,6 +20,7 @@ const Explore = () => {
 
   return (
     <div>
+      <Nav />
       {
         recipes.map((recipe) => (
           <div key={recipe._id}>
