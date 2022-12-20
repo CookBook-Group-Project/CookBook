@@ -1,0 +1,154 @@
+.recipe-card-container{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.recipe-card{
+    position: absolute;
+    display: flex;
+    top: 34rem;
+    left: 8rem;
+    width: 30rem;
+    height: 40rem;
+    flex-wrap: wrap;
+}
+
+.recipe-card h3{
+    font-size: 3rem;
+    margin-top: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.card-span{
+    font-size: smaller;
+    margin-left: 2rem;
+    font-weight: lighter;
+}
+
+
+.recipe-card-bottom{
+    position: absolute;
+    height: 30rem;
+    width: 70rem;
+    top: 40%;
+}
+
+.recipe-card-bottom h1{
+    font-size: 3rem;
+    margin-left: 22rem;
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.recipe-card-bottom p{
+    font-style: italic;
+    font-size: 3rem;
+    margin-left: 3rem;
+    margin-top: 1rem;
+}
+
+.recipe-card-left{
+    position: absolute;
+}
+
+.left-title{
+    position: absolute;
+    top: 14rem;
+    width: 50rem;
+}
+
+.left-title h1{
+    font-size: 6rem;
+    margin-left: 2rem;
+}
+
+.left-title h2{
+    color: #E0872E;
+    margin-left: 80%;
+    font-size: 5rem;
+}
+
+
+
+.show-directions{
+    position: absolute;
+    width: 20rem;
+    bottom: -20%;
+    right: -180%;
+    border: 1px solid #E0872E;
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.show-directions:hover{
+    background-color: #E0872E;
+    color: black;
+}
+
+
+
+
+
+
+
+
+.recipe-card-right{
+        background-color: #E0872E;
+        width: 40%;
+        height: 78rem;
+        border-radius: 2rem;
+        position: absolute;
+        right: -2rem;
+        top: -10rem;
+        transform: translateY(10%);
+        min-width: 31rem;
+        padding: 2rem;
+}
+
+.recipe-title{
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    font-size: 3rem;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.recipe-title-divider{
+    color: #fff;
+    position: absolute;
+    top: 25%;
+    width: 90%;
+}
+
+.recipe-card-image{
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    height: 60%;
+    min-height: 40rem;
+    width: 60%;
+    min-width: 40rem;
+    border-radius: 2rem;
+}
+
+.recipe-card-image:hover{
+    scale: 1.1 ;
+}
+
+
+.image-container{
+    display: block;
+}
+
+
+.directions-container{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    display: none;
+}
