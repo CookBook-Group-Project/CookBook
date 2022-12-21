@@ -1,6 +1,6 @@
 import './RecipeTile.css'
-import React, { useEffect, useState, useContext } from "react";
-import {Link, useParams} from 'react-router-dom'
+import React, { useContext } from "react";
+import {Link} from 'react-router-dom'
 import { UserContext } from "../../contexts/UserContext";
 
 
@@ -24,7 +24,7 @@ const RecipeTile = (props) => {
                         {recipe.instructions}
                     </div>
                     <Link to={`/recipe/${recipe._id}`} className='cta'>View Recipe</Link>
-                    <p className='recipe-tile-author'>{loggedUser.username}</p>
+                    <p className='recipe-tile-author'>{recipe.creator}</p>
                 </div>
             </div>
         </div>

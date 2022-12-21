@@ -9,9 +9,9 @@ import Register from "./components/Register/Register";
 import Home from './components/Home/Home'
 import Explore from "./views/Explore";
 import AddRecipe from './components/Create-Recipe/AddRecipe'
-import RecipeCard from "./components/Recipe-Card/RecipeCard";
+import RecipeCard from "./components/One-Recipe/RecipeCard";
 import {UpdateRecipe}  from "./components/Update-Recipe/UpdateRecipe";
-import { UserRecipes } from "./components/UserRecipes";
+import { UserRecipes } from "./components/Your-Recipes/UserRecipes";
 
 // import NavBar from './components/Nav/Nav'
 

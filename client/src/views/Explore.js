@@ -17,10 +17,13 @@ const Explore = () => {
         })
       },[])
 
+      //the css for this file is in app.css
+
 
   return (
     <div>
       <Nav/>
+      <div className='all-recipes-container' >
       {
         recipes.map(
           (recipe) => (
@@ -30,6 +33,7 @@ const Explore = () => {
           )
         )
       }
+    </div>
     </div>
 
   )

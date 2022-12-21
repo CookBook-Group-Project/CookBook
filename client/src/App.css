@@ -11,3 +11,11 @@ html{
 input{
   border-radius: 1.6rem;
 }
+
+
+.all-recipes-container{
+  margin-top: 10rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

@@ -1,7 +1,11 @@
 import React, {useState,useEffect,useContext} from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { UserContext } from '../../contexts/UserContext'
 import axios from 'axios'
-import { UserContext } from '../contexts/UserContext'
+import Nav from '../Nav/Nav'
+import RecipeTile from '../Recipe-Tile/RecipeTile'
+import './UserRecipes.css'
+
 
 export const UserRecipes = () => {
 
@@ -37,22 +41,19 @@ export const UserRecipes = () => {
     
 
     return (
-        <div>
-            {/* tested to see if the right user pulled up */}
-            {/* {loggedUser.username} */}
+        <div className='your-recipes-container'>
+        <Nav/>
+            <div className='your-recipes-title'>
+                <h2>{loggedUser.username}'s Recipes</h2>
+            </div>
             {
                 userRecipe.map((recipe,index) => {
                     return(
-                        <p key = {index}>
-                            Recipe: {recipe.title}<br/>
-                            Instructions: {recipe.instructions}<br/>
-                            Ingredients: {recipe.ingredients}<br/>
-                            Serves: {recipe.serves}<br/>
-                            Prep Time: {recipe.prepTime}<br/>
-                            Cook Time: {recipe.cookTime}<br/>
-                            <Link to = {`/update/${recipe._id}`}>Update</Link>
-                            <button onClick={(e) => deleteRecipe(recipe._id)}>Delete</button>
-                        </p>
+                        <div className='your-recipes-card' key = {index} >
+                        <RecipeTile recipe={recipe}/>
+                            <Link to = {`/update/${recipe._id}`} className='your-recipes-link'>Update</Link>
+                            <button onClick={(e) => deleteRecipe(recipe._id)} className='your-recipes-delete'>Delete</button>
+                        </div>
                     )
                 })
             }

@@ -19,7 +19,7 @@ const RecipeCard = (props) => {
         show.innerHTML = 'Currently Cooking'
     }
 
-
+        // We need to plug in recipe.title, recipe.serves , etc 
 
     return (
         <div>

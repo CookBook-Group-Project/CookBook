@@ -41,7 +41,7 @@
     margin-bottom: 40px;
     cursor: default;
     flex-wrap: wrap;
-    /* max-width: 20rem; */
+    height: 10rem;
 }
 
 .recipe-tile-card:hover{
