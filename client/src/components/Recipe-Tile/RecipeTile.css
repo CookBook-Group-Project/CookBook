@@ -42,6 +42,9 @@
     cursor: default;
     flex-wrap: wrap;
     height: 10rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .recipe-tile-card:hover{
