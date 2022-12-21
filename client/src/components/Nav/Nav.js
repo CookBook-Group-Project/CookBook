@@ -72,7 +72,7 @@ useEffect(() => {
           <NavLink to='/explore' className='nav-link'>Explore Recipes</NavLink>
           </li>
           <li class="nav-item">
-            <NavLink to = {`/recipes/loggedUser/${loggedUser.id}`}  class="nav-link">Your Recipes</NavLink>
+            <NavLink to={`/recipes/loggedUser/${loggedUser.id}`} className="nav-link">Your Recipes</NavLink>
           </li>
           <li class="nav-item">
           <NavLink to='/addRecipe' className='nav-link'>Add A Recipe</NavLink>

@@ -5,8 +5,6 @@ const RecipeTile = (props) => {
     
     const {recipe} = props
 
-    
-
     return (
         <div>
             <div>Recipe: {recipe.title}</div>
