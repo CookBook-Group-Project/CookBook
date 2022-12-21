@@ -44,7 +44,7 @@ export const UserRecipes = () => {
         <div className='your-recipes-container'>
         <Nav/>
             <div className='your-recipes-title'>
-                <h2>{loggedUser.username}'s Recipes</h2>
+                <h2>{loggedUser.username}'s Recipe</h2>
             </div>
             {
                 userRecipe.map((recipe,index) => {
