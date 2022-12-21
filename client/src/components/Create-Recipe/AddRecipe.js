@@ -18,7 +18,7 @@ export const AddRecipe = () => {
     const [ingredients,setIngredients] = useState('')
     const [prepTime,setPrepTime] = useState('')
     const [serves,setServes] = useState('')
-    const [notes,setNotes] = useState('')
+    const [mainImage,setMainImage] = useState('')
 
     const [errors, setErrors] = useState([])
 
@@ -46,7 +46,7 @@ export const AddRecipe = () => {
             cookTime,
             prepTime,
             serves,
-            notes,
+            mainImage,
             creator: loggedUser.id
         })
         .then(response => {
@@ -64,6 +64,21 @@ export const AddRecipe = () => {
             }
             setErrors(errorArr)
         })
+    }
+
+    //switching image upload 
+    
+    const handleFile = () =>{
+        const file = document.querySelector('.file-input')
+        
+        file.style.display = 'block'
+    }
+    
+    const handleUrl = () =>{
+        const url = document.querySelector('.url-input')
+        
+        url.style.display = 'block'
+
     }
 
     return (
@@ -94,8 +109,13 @@ export const AddRecipe = () => {
 
             <div className="add-right">
                 <div className="add-right-container">
-                    <label>Image</label>
-                        <input type ='file' className="file-input"/>
+                    <div className="image-selection-container">
+                    <label className="image-label">Image</label>
+                        <span className="file-selector" onClick={handleFile}>file</span>
+                        <span className="url-selector" onClick={handleUrl}>url</span>
+                    </div>
+                        <input type ='file' className="file-input" onChange = {(e) => setMainImage(e.target.value)}/>
+                        <input type ='text' className="url-input" onChange = {(e) => setMainImage(e.target.value)}/>
                     <hr></hr>
 
                     <label className="">Ingredients</label>

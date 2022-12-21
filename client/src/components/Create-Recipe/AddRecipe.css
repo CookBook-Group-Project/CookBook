@@ -74,6 +74,40 @@ hr{
     padding: 2rem;
 }
 
+
+.image-label{
+    position: absolute;
+    left: 4%;
+}
+
+.image-selection-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.file-selector,.url-selector{
+    color: #fff;
+    font-size: smaller;
+    margin: 0.5rem;
+    cursor: pointer;
+    border: 1px solid #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.file-input,.url-input{
+    display: none;
+    margin: 1rem;
+    margin-left: 20%;
+}
+
+.file-selector:hover,.url-selector:hover{
+    scale: 1.1;
+}
+
+
+
+
 @media screen and (max-width: 800px) {
     .add-title{
         font-size: 18px;

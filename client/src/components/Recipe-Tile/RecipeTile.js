@@ -14,8 +14,8 @@ const RecipeTile = (props) => {
     return (
         <div class="recipe-tile-container">
             <div class="recipe-tile-card">
-                {/* <img class="recipe-tile-image" src={recipe.image} alt='recipe'></img> */}
-                <img class="recipe-tile-image" src='https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60' alt='recipe'></img>
+                <img class="recipe-tile-image" src={recipe.mainImage} alt='recipe'></img>
+                {/* <img class="recipe-tile-image" src='https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60' alt='recipe'></img> */}
                 <div class="recipe-tile-text">
                     <div class="card--title">
                         {recipe.title}

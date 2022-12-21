@@ -36,17 +36,21 @@ const RecipeCard = (props) => {
                         <div className='recipe-card-top'>
                             <h3>Servings 
                                 <span className='card-span'>4</span>
+                                {/* <span className='card-span'>{recipe.serves}</span> */}
                             </h3>
                             <h3>Prep Time 
                                 <span className='card-span'>20 mins</span>
+                                {/* <span className='card-span'>{recipe.prepTime}</span> */}
                             </h3>
                             <h3>Cook Time 
                                 <span className='card-span'>40 mins</span>
+                                {/* <span className='card-span'>{recipe.cookTime}</span> */}
                             </h3>
                         </div>
                         <div className='recipe-card-bottom'>
                             <h1>Ingredients Needed</h1>
                             <p>Ingredients list goes here</p>
+                            {/* <p>{recipe.ingredients}</p> */}
                         </div>
                         <h2 className='show-directions' onClick={handleClick}>Show Directions</h2>
                     </div>
@@ -55,11 +59,14 @@ const RecipeCard = (props) => {
                 <div className='recipe-card-right'>
                 <div className='card-right-container'>
                     <h3 className='recipe-title'>Recipe Title</h3>
+                    {/* <h3 className='recipe-title'>{recipe.title}</h3> */}
                     <hr className='recipe-title-divider'></hr>
                     <div className='image-container'>
-                        <img src='https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60' alt='recipe image' className='recipe-card-image'></img>
+                        {/* <img src={recipe.mainImage} alt='main' className='recipe-card-image'></img> */}
+                        <img src='https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60' alt='recipe' className='recipe-card-image'></img>
                     </div>
                     <div className='directions-container'>
+                    {/* <p>{recipe.instructions}</p> */}
                     <p>directions</p>
                     <p>directions</p>
                     <p>directions</p>
