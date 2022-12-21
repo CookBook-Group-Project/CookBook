@@ -7,10 +7,13 @@ hr{
 
 .error-container{
     position: absolute;
-    bottom: 0;
-    left: 37%;
-    scale: 0.8;
+    bottom: -3rem;
+    color: red;
+    right: 22%;
+    scale: 0.6;
+    max-width: 70rem;
 }
+
 
 
 .add-bg{

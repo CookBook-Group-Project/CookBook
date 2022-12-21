@@ -77,9 +77,9 @@ useEffect(() => {
           <li class="nav-item">
           <NavLink to='/addRecipe' className='nav-link'>Add A Recipe</NavLink>
           </li>
-          <li class="nav-item">
+          {/* <li class="nav-item">
             <a href="#" class="nav-link">Settings</a>
-          </li>
+          </li> */}
           {!loggedUser? 
           <li class="nav-item">
             <NavLink to='/login' className='nav-link'>Log In</NavLink>
