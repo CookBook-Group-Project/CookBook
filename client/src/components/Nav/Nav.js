@@ -67,7 +67,7 @@ useEffect(() => {
           <i class='bx bx-x'></i>
         </span>
         <ul class="navbar-nav">
-          <p>{loggedUser.username}</p>
+          <p className="logged-user">{loggedUser.username}</p>
           <li class="nav-item">
           <NavLink to='/explore' className='nav-link'>Explore Recipes</NavLink>
           </li>

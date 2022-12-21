@@ -40,22 +40,19 @@ function App() {
     <div className="App">
       <UserContext.Provider value={{loggedUser, setLoggedUser}}>
       <BrowserRouter>
-      {/* Nav bar will be imported into every component directly for access to useContext  */}
-        {/* <NavBar/> */}
         <Routes>
             <Route path='/' element={<Home/>} />
             <Route path='/login' element={<Login/>} />
             <Route path='/register' element={<Register/>} />
             <Route path='/explore' element={<Explore/>} />
+
             {/* Recipe card path added to test out its development */}
-            <Route path='/card' element={<RecipeCard/>} />
+            <Route path='/recipe/:id' element={<RecipeCard/>}/>
             <Route path = '/recipes/loggedUser/:id' element={<UserRecipes/>}/>
-            {/* <Route path='/login' element={<Login setLoginUser={setLoginUser}/>}/> */}
-            {/* <Route path='/allRecipes' element={<DisplayAll/>}  /> */}
-            {/* <Route path='/addRecipe' element={<Form setList={setTaskList}/>}/> */}
+
+
             <Route path='/addRecipe' element={<AddRecipe/>}/>
             <Route path='/update/:id' element={<UpdateRecipe/>}/>
-            {/* <Route path='/oneRecipe/:id' element={<OneRecipe/>}/> */}
             {/* <Route path='/edit/:id' element={<EditForm />}/> */}
         </Routes>
       </BrowserRouter>

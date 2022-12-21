@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import RecipeTile from '../components/RecipeTile'
+import RecipeTile from '../components/Recipe-Tile/RecipeTile'
 import Nav from '../components/Nav/Nav'
 
 const Explore = () => {
@@ -20,7 +20,7 @@ const Explore = () => {
 
   return (
     <div>
-      {/* <Nav/> */}
+      <Nav/>
       {
         recipes.map(
           (recipe) => (

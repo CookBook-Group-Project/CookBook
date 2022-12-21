@@ -141,7 +141,7 @@ justify-content: space-between;
 }
 
 .nav-social-icon a {
-  transform: translateY(22rem);
+  transform: translateY(50%);
   margin: 1.2rem;
   scale: 1.3;
   color: #E0872E;
@@ -150,6 +150,7 @@ justify-content: space-between;
 .nav-social-icon a:hover{
   border: 1px solid #fff;
   border-radius: 0.5rem;
+  scale: 1.4;
 }
 
 /* === show menu ===  */
@@ -159,6 +160,13 @@ transform: translateX(0);
 
 /* ===  main === */
 
+
+.logged-user{
+  font-size: 3rem;
+  text-align: center;
+  color: #E0872E;
+  cursor: default;
+}
 
 .site-name {
   position: fixed;
