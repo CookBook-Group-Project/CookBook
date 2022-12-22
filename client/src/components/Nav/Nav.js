@@ -68,21 +68,28 @@ useEffect(() => {
         </span>
         <ul class="navbar-nav">
           <p className="logged-user">{loggedUser.username}</p>
+            <li class="nav-item">
+              <NavLink to='/' className='nav-link'>Home</NavLink>
+            </li>
           <li class="nav-item">
           <NavLink to='/explore' className='nav-link'>Explore Recipes</NavLink>
           </li>
-          <li class="nav-item">
-            <NavLink to={`/recipes/loggedUser/${loggedUser.id}`} className="nav-link">Your Recipes</NavLink>
-          </li>
-          <li class="nav-item">
-          <NavLink to='/addRecipe' className='nav-link'>Add A Recipe</NavLink>
-          </li>
+          {loggedUser&&
+            <li class="nav-item">
+              <NavLink to={`/recipes/loggedUser/${loggedUser.id}`} className="nav-link">Your Recipes</NavLink>
+            </li>
+          }
+          {loggedUser&&
+            <li class="nav-item">
+              <NavLink to='/addRecipe' className='nav-link'>Add A Recipe</NavLink>
+            </li>
+          }
           {/* <li class="nav-item">
             <a href="#" class="nav-link">Settings</a>
           </li> */}
           {!loggedUser? 
           <li class="nav-item">
-            <NavLink to='/login' className='nav-link'>Log In</NavLink>
+            <NavLink to='/login' className='nav-link'>Login or Register</NavLink>
           </li>
           :
           <li class="nav-item">

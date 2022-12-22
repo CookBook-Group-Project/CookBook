@@ -47,8 +47,9 @@ export const AddRecipe = () => {
             prepTime,
             serves,
             mainImage,
+            creatorName:loggedUser.username,
             creator: loggedUser.id
-        })
+        },{withCredentials:true, credentials:'include'})
         .then(response => {
             console.log(response.data)
             setNewRecipe([...newRecipe,response.data])

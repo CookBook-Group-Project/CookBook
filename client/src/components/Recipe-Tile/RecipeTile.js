@@ -24,7 +24,7 @@ const RecipeTile = (props) => {
                         {recipe.instructions}
                     </div>
                     <Link to={`/recipe/${recipe._id}`} className='cta'>View Recipe</Link>
-                    <p className='recipe-tile-author'>{recipe.creator}</p>
+                    <p className='recipe-tile-author'>{recipe.creatorName}</p>
                 </div>
             </div>
         </div>
