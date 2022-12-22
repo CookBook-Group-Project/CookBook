@@ -12,7 +12,7 @@ import AddRecipe from './components/Create-Recipe/AddRecipe'
 import RecipeCard from "./components/One-Recipe/RecipeCard";
 import {UpdateRecipe}  from "./components/Update-Recipe/UpdateRecipe";
 import { UserRecipes } from "./components/Your-Recipes/UserRecipes";
-import NotFound from "./components/NotFound";
+import NotFound from "./components/Not-Found/NotFound";
 
 // import NavBar from './components/Nav/Nav'
 

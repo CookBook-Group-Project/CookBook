@@ -49,7 +49,7 @@
     opacity: 1;
     letter-spacing: 1px;
     position: absolute;
-    transform: translateX(-20%);
+    transform: translateX(-19%);
     width: 100%;
     top: -3rem;
     font-family: sans-serif;
@@ -152,7 +152,7 @@
 }
 
 .recipe-card-image:hover{
-    scale: 1.1 ;
+    scale: 1.02 ;
 }
 
 
