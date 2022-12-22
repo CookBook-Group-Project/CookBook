@@ -89,8 +89,8 @@ export const AddRecipe = () => {
                 {errors.map((error,index) => <p key = {index}>{error}</p>)}
             </div>
             <form onSubmit={addRecipe} className="add-form">
-            <div className="add-left">
             <h1 className="add-title">Add a <span className="add-span">recipe.</span></h1>
+            <div className="add-left">
                 
                 <label className="">Recipe Name</label>
                     <input type = 'text' value={title} onChange = {(e) => setTitle(e.target.value)}/>
@@ -101,11 +101,11 @@ export const AddRecipe = () => {
                 <hr></hr>
 
                 <label className="">Prep Time</label>
-                    <input type = 'text' value={cookTime} onChange = {(e) => setCooKTime(e.target.value)}/>
+                    <input type = 'text' value={prepTime} onChange = {(e) => setPrepTime(e.target.value)}/>
                 <hr></hr>
 
                 <label className="">Cook Time</label>
-                    <input type = 'text' value={prepTime} onChange = {(e) => setPrepTime(e.target.value)}/>
+                    <input type = 'text' value={cookTime} onChange = {(e) => setCooKTime(e.target.value)}/>
             </div>
 
             <div className="add-right">
@@ -116,18 +116,24 @@ export const AddRecipe = () => {
                         <span className="url-selector" onClick={handleUrl}>url</span>
                     </div>
                         <input type ='file' className="file-input" onChange = {(e) => setMainImage(e.target.value)}/>
-                        <input type ='text' className="url-input" onChange = {(e) => setMainImage(e.target.value)}/>
+                        <div className="url-input">
+                        <p className="url-link">url link</p>
+                            <input type ='text' onChange = {(e) => setMainImage(e.target.value)}/>
+                        </div>
                     <hr></hr>
 
                     <label className="">Ingredients</label>
-                        <textarea type= 'text' 
+                        <textarea 
+                            type= 'text' 
+                            className="ingredients-textarea"
                             value={ingredients} 
                             onChange = {(e) => setIngredients(e.target.value)}/>
                     <hr></hr>
-
                     <label>Instructions</label>
-                        <textarea type = 'text' 
+                        <textarea 
+                        type = 'text' 
                         value={instructions} 
+                        className="instructions-textarea"
                         placeholder=''
                         onChange = {(e) => setInstructions(e.target.value)}/>
                 </div>
