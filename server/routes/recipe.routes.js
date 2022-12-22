@@ -3,6 +3,7 @@ const {authenticate, isLoggedIn} = require('../config/jwt.config')
 
 module.exports = (app) => {
     app.get('/api/allRecipes', RecipeController.getAllRecipes)
+    app.get('/api/fiveRecipes', RecipeController.getFiveRecipes)
     app.get('/api/recipe/:id', RecipeController.getOneRecipe)
     app.post('/api/addRecipe', authenticate, RecipeController.addRecipe)
     // app.post('/api/addRecipe', RecipeController.addRecipe)

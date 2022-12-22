@@ -1,7 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
+import { Link } from 'react-router-dom'
 import './Home.css'
 import Nav from '../Nav/Nav'
-
+import axios from 'axios'
 import circle from './Images/orange-circle.png'
 import family from './Images/family.png'
 import quick from './Images/quick.png'
@@ -10,10 +11,25 @@ import together from './Images/together.png'
 
 const Home = () => {
 
+  const [recipes,setRecipes] = useState([])
 
 
+  useEffect(() => {
+    axios.get('http://localhost:8000/api/fiveRecipes', {withCredentials: true, credentials: 'include'})
+    .then((res) => {
+        console.log(res)
+        setRecipes(res.data)
+    }).catch((err) => {
+        console.log(err)
+    })
+  },[])
 
 
+  const handleHover = () =>{
+    const homeCardContainer = document.querySelector('.home-card-description-container')
+
+    homeCardContainer.style.display = 'block'
+  }
 
   return (
 
@@ -22,102 +38,71 @@ const Home = () => {
     {/* Top - Image */}
     <Nav></Nav>
       <img src={circle} alt='circle' className='orange-circle'></img>
-        <div class="container">
-          <img class="smoke" src= "https://www.dif.co.th/wp-content/uploads/revslider/sport-smoke.png" alt='smoke'/>
+        <div className="container">
+          <img className="smoke" src= "https://www.dif.co.th/wp-content/uploads/revslider/sport-smoke.png" alt='smoke'/>
         </div>
-        <div class="container">
-          <img class="smoke" src= "https://www.dif.co.th/wp-content/uploads/revslider/sport-smoke.png" alt='smoke'/>
+        <div className="container">
+          <img className="smoke" src= "https://www.dif.co.th/wp-content/uploads/revslider/sport-smoke.png" alt='smoke'/>
         </div>
         <div className='image-container'>
-          <div class="column" id="bg-img">
-            <div class="typewriter">CookBook<span className='span'>.</span></div>
+          <div className="column" id="bg-img">
+            <div className="typewriter">CookBook<span className='span'>.</span></div>
           </div>
         </div>
+
+
 
       {/* Cards container - Gray Box */}
         <section className='triangle'>
-        <div class="card-container">
-          <div class="card" id='card1'>
-            <h3 class="title">Card 1</h3>
-              <div class="bar">
-                <div class="emptybar"></div>
-                <div class="filledbar"></div>
+        <div className="card-container">
+
+        {
+        recipes.map(
+          (recipe) => (
+          <div key={recipe._id}>
+            <div className="card"
+              onMouseOver={handleHover}>
+              <h3 className="title">{recipe.title}</h3>
+              <div className="bar">
+                <div className="emptybar"></div>
+                <div className="filledbar"></div>
               </div>
-              <div class="circle">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-                  <circle class="stroke" cx="60" cy="60" r="50"/>
-                </svg>
+              <div className="home-cards-image-container">
+                <img src={recipe.mainImage} className='home-cards-image' ></img>
               </div>
+              <Link to={`/recipe/${recipe._id}`} className='home-card-link'>View Recipe</Link>
+
+            </div>
+            <div className='home-card-description-container'>
+            <a href='/explore'>Want to explore more recipes ?</a>
           </div>
-          <div class="card" id='card2'  >
-            <h3 class="title">Card 2</h3>
-            <div class="bar">
-              <div class="emptybar"></div>
-              <div class="filledbar"></div>
-            </div>
-            <div class="circle">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-                <circle class="stroke" cx="60" cy="60" r="50"/>
-              </svg>
-            </div>
           </div>
-          <div class="card" id='card3' >
-            <h3 class="title">Card 3</h3>
-            <div class="bar">
-              <div class="emptybar"></div>
-              <div class="filledbar"></div>
-            </div>
-            <div class="circle">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-                <circle class="stroke" cx="60" cy="60" r="50"/>
-              </svg>
-            </div>
-          </div>
-          <div class="card" id='card4' >
-            <h3 class="title">Card 4</h3>
-            <div class="bar">
-              <div class="emptybar"></div>
-              <div class="filledbar"></div>
-            </div>
-            <div class="circle">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-                <circle class="stroke" cx="60" cy="60" r="50"/>
-              </svg>
-            </div>
-          </div>
+          )
+        )
+      }
         </div>
 
-        {/* Card Text Container */}
-        <div className='text-container'>
-          <h3 className='card1-text'>Card 1</h3>
-          <h3 className='card2-text'>Card 2</h3>
-          <h3 className='card3-text'>Card 3</h3>
-          <h3 className='card4-text'>Card 4</h3>
-        </div>
     </section>
 
     {/* Lower Container */}
-    <section class="full-height">
-          <div class="column" id="col-places">
+    <section className="full-height">
+          <div className="column" id="col-places">
             <div id="col-images">
-              <div class="col-text">
+              <div className="col-text">
                 <div>
                   <img src={together} alt='together'/>
-                  <h3>Together</h3>
                 </div>
                   <p>Cook up something with a friend or family member.</p>
               </div>
-              <div class="col-text">
+              <div className="col-text">
                   <div>
                     <img src={quick} alt='quick'/>
-                    <h3>Quick</h3>
                   </div>
                   <p>In a hurry ? We have recipes you can do in under 30 mins !</p>
               </div>
-              <div class="col-text">
+              <div className="col-text">
                 <div>
                   <img src={family} alt='family'/>
-                  <h3>Family </h3>
                 </div>
                 <p>Store your family's recipes to share with your friends. </p>
               </div>

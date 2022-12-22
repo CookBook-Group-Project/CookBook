@@ -13,6 +13,16 @@ module.exports = {
         })
     },
 
+    getFiveRecipes: (req,res)=>{
+        Recipe.find().sort({createdAt:-1}).limit(5)
+        .then((result)=>{
+            res.json(result)
+        }).catch((err)=>{
+            console.log(err)
+            res.status(400).json(err)
+        })
+    },
+
     getOneRecipe: (req,res)=>{
         Recipe.findById(req.params.id)
         .then((result)=>{
