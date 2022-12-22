@@ -23,7 +23,12 @@ const RecipeTile = (props) => {
                     <div class="card--sub">
                         {recipe.instructions}
                     </div>
-                    <Link to={`/recipe/${recipe._id}`} className='cta'>View Recipe</Link>
+                    <Link to={{
+                        pathname:`/recipe/${recipe._id}`,
+                        state: {
+                            recipe: recipe
+                        }
+                    }} className='cta'>View Recipe</Link>
                     <p className='recipe-tile-author'>{recipe.creator}</p>
                 </div>
             </div>

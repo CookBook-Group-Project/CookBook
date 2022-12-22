@@ -1,11 +1,13 @@
 import Nav from '../Nav/Nav'
 import './RecipeCard.css'
+import { useLocation } from 'react-router-dom'
 
 const RecipeCard = (props) => {
 
+    let location = useLocation();
 
     //We pull down the list of all recipes via props so that cards can be generated for each.
-    const {recipe} = props
+    // const {recipe} = props
 
 
     // Switching between image and directions view 
@@ -20,6 +22,7 @@ const RecipeCard = (props) => {
     }
 
         // We need to plug in recipe.title, recipe.serves , etc 
+        // GJL Working on this now!!!!
 
     return (
         <div>
@@ -35,22 +38,22 @@ const RecipeCard = (props) => {
                     <div className='recipe-card'>
                         <div className='recipe-card-top'>
                             <h3>Servings 
-                                <span className='card-span'>4</span>
-                                {/* <span className='card-span'>{recipe.serves}</span> */}
+                                {/* <span className='card-span'>4</span> */}
+                                <span className='card-span'>{location.userProps.recipe.serves}</span>
                             </h3>
                             <h3>Prep Time 
-                                <span className='card-span'>20 mins</span>
-                                {/* <span className='card-span'>{recipe.prepTime}</span> */}
+                                {/* <span className='card-span'>20 mins</span> */}
+                                <span className='card-span'>{location.userProps.recipe.prepTime}</span>
                             </h3>
                             <h3>Cook Time 
-                                <span className='card-span'>40 mins</span>
-                                {/* <span className='card-span'>{recipe.cookTime}</span> */}
+                                {/* <span className='card-span'>40 mins</span> */}
+                                <span className='card-span'>{location.userProps.recipe.cookTime}</span>
                             </h3>
                         </div>
                         <div className='recipe-card-bottom'>
                             <h1>Ingredients Needed</h1>
                             <p>Ingredients list goes here</p>
-                            {/* <p>{recipe.ingredients}</p> */}
+                            <p>{location.userProps.recipe.ingredients}</p>
                         </div>
                         <h2 className='show-directions' onClick={handleClick}>Show Directions</h2>
                     </div>
@@ -58,18 +61,18 @@ const RecipeCard = (props) => {
                 {/* Right Container  */}
                 <div className='recipe-card-right'>
                 <div className='card-right-container'>
-                    <h3 className='recipe-title'>Recipe Title</h3>
-                    {/* <h3 className='recipe-title'>{recipe.title}</h3> */}
+                    {/* <h3 className='recipe-title'>Recipe Title</h3> */}
+                    <h3 className='recipe-title'>{location.userProps.recipe.title}</h3>
                     <hr className='recipe-title-divider'></hr>
                     <div className='image-container'>
-                        {/* <img src={recipe.mainImage} alt='main' className='recipe-card-image'></img> */}
-                        <img src='https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60' alt='recipe' className='recipe-card-image'></img>
+                        <img src={location.userProps.recipe.mainImage} alt='main' className='recipe-card-image'></img>
+                        {/* <img src='https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60' alt='recipe' className='recipe-card-image'></img> */}
                     </div>
                     <div className='directions-container'>
-                    {/* <p>{recipe.instructions}</p> */}
+                    <p>{location.userProps.recipe.instructions}</p>
+                    {/* <p>directions</p>
                     <p>directions</p>
-                    <p>directions</p>
-                    <p>directions</p>
+                    <p>directions</p> */}
                     </div>
                 </div>
                 </div>
