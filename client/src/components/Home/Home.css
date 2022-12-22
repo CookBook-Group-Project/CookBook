@@ -90,6 +90,7 @@ img {
 
 .col-text p{
   margin-top: 6rem;
+  cursor: default;
 }
 
 .home-card-link{
@@ -164,10 +165,12 @@ z-index: 100;
   font-size: 8rem;
   font-family: sans-serif;
 	overflow: hidden;
+  cursor: default;
 	border-right: 4px solid #212121;
 	animation: cursor 1s step-start infinite, 
     text 5s steps(18) alternate infinite;
 }
+
 
 .span{
   color: #ffb133;
@@ -286,7 +289,7 @@ z-index: 100;
 .home-card-description-container{
   position: absolute;
   left: 0;
-  bottom: -20rem;
+  bottom: -24rem;
   border: 1px solid orange;
   width: 100%;
   display: none;
