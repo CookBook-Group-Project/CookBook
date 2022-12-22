@@ -42,7 +42,7 @@ function App() {
       <UserContext.Provider value={{loggedUser, setLoggedUser}}>
       <BrowserRouter>
         <Routes>
-          {loggedUser?
+          {loggedUser!=null?
           <>
             <Route path='/' element={<Home/>} />
             <Route path='/login' element={<Login/>} />
