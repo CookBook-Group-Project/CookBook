@@ -1,4 +1,5 @@
 const express = require('express');
+const multer = require('multer');
 const cors = require('cors');
 const app = express();
 const PORT = 8000;
@@ -25,3 +26,4 @@ require('./routes/user.routes')(app)
 app.listen(PORT, ( ) => {
     console.log(`Server is up on port ${PORT}`)
 })
+

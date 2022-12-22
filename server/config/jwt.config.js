@@ -3,9 +3,10 @@ const SECRET = process.env.SECRET_KEY
 const User = require('../models/user.model')
 
 module.exports.authenticate = (req, res, next) => {
-    
+    console.log("req.cookies follows", req)
     jwt.verify(req.cookies.userToken, SECRET, (err, payload) => {
         if (err) {
+            console.log(err)
             console.log('Authentication error!')
             res.status(401).json({verified:false});
         }else{

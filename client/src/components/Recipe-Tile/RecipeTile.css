@@ -1,0 +1,102 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap');
+
+
+
+.recipe-tile-container {
+    margin-top: 15%;
+    margin-bottom: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: #fafafa;
+}
+
+.recipe-tile-card {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: #fafafa;
+    border: 2px solid rgba(0, 0, 0, .10);
+    width: 40rem;
+    min-height: 63rem;
+    box-shadow: 2px 4px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card--title{
+    padding-top: 3rem;
+    color: #313135;
+    font-weight: 700;
+    font-size: 2.4rem;
+    cursor: default;
+}
+
+.card--sub{
+    padding-top: 2rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #59595C;
+    margin-bottom: 40px;
+    cursor: default;
+    flex-wrap: wrap;
+    height: 10rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.recipe-tile-card:hover{
+    scale: 1.01;
+}
+
+
+
+.recipe-tile-image{
+    background-size: cover;
+    min-width: 100%;
+    margin: 0 auto;
+    height: 34rem;
+    z-index: 0;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+
+
+.recipe-tile-text{
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.recipe-tile-author{
+    font-size: 2rem;
+    margin-left: 58%;
+    transform: translateY(-90%);
+    color: gray;
+    cursor: default;
+    flex-wrap: wrap;
+}
+
+
+.cta {
+    justify-self: flex-end;
+    text-decoration: none;
+    color: #f2f2f2;
+    background-color: #E0872E;
+    border-radius: 4px;
+    font-size: 2.4rem;
+    padding: .4rem 0;
+    width: 19rem;
+    text-align: center;
+    box-shadow: 2px 4px 12px rgba(29, 29, 29, 0.2);
+}
+
+.cta:hover {
+    scale: 1.1;
+    color: #272727;
+}
+
+

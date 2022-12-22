@@ -1,0 +1,11 @@
+
+.not-found{
+    transform: translateX(-13%);
+}
+
+.animation-container-404{
+    position: absolute;
+    top: -20rem;
+    transform: translateX(20%);
+    color: orange;
+}

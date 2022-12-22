@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/CookBook', {
+mongoose.connect('mongodb://127.0.0.1/CookBook', {
     useNewUrlParser:true,
     useUnifiedTopology:true
 })

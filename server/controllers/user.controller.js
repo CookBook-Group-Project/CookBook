@@ -3,7 +3,7 @@ const Recipe = require('../models/recipe.model')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const SECRET = process.env.SECRET_KEY
-// const {isLoggedUser} = require('../config/jwt.config')
+const {isLoggedUser} = require('../config/jwt.config')
 
 module.exports = {
 

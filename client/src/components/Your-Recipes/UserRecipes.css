@@ -1,0 +1,63 @@
+
+
+.your-recipes-title{
+    width: 35%;
+    background-color: #E0872E;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 17rem;
+    margin-top: 10rem;
+    cursor: default;
+}
+
+.your-recipes-title h2{
+    margin-left: 2%;
+    padding: 1rem;
+    font-size: 4rem;
+}
+
+.your-recipes-card{
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    transform: translateX(70%);
+}
+
+.your-recipes-link{
+    color: #272727;
+    font-size: 3rem;
+    border-top: 1px solid #272727;
+    margin-top: 18%;
+    margin-left: 1rem;
+    height: 6rem;
+    width: 16rem;
+    color: #E0872E;
+}
+
+.your-recipes-link:hover{
+    scale: 1.1;
+    text-decoration: none;
+    color: #2ee063;
+}
+
+.your-recipes-delete{
+    border: none;
+    border-top: 1px solid #272727;
+    background-color: transparent;
+    transform: translateX(-16rem);
+    margin-top: 26%;
+    width: 16rem;
+    height: 100%;
+    text-align: left;
+    color: #c14949;
+    opacity: 0.8;
+    font-size: 3.4rem;
+}
+
+.your-recipes-delete:hover{
+    scale: 1.04;
+    color: red;
+}
+
+

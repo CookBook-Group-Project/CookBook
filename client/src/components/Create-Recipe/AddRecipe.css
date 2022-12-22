@@ -1,0 +1,172 @@
+
+hr{
+    border-block-end: 4px solid #fff;
+    width: 90%;
+}
+
+
+.error-container{
+    position: absolute;
+    bottom: 3.4rem;
+    color: red;
+    right: 26%;
+    scale: 0.6;
+    max-width: 80rem;
+}
+
+
+
+.add-bg{
+    background: url('./Images/add-bg.png');
+    height: 90rem;
+    overflow: hidden;
+    width: 100vw;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    background-color: #E0872E;
+    z-index: 0;
+}
+
+.add-form{
+    display: flex;
+    color: #272727;
+
+}
+
+.add-title{
+    font-size: 4rem;
+    padding: 1rem;
+    font-weight: bold;
+    position: absolute;
+    transform: translateX(-40%);
+    top: 18rem;
+    z-index: 2;
+}
+
+.add-span{
+    color: #fff;
+}
+
+.add-left{
+    background-color: #E0872E;
+    border-radius: 2rem;
+    height: 73rem;
+    margin-top: 12rem;
+    width: 40%;
+    position: absolute;
+    transform: translateY(10%);
+    min-width: 50rem;
+    padding: 4rem;
+    font-size: 4rem;
+}
+
+.add-left label{
+    font-size: 2.8rem;
+}
+
+.add-right{
+    background-color: #E0872E;
+    width: 40%;  
+    height: 78rem;
+    border-radius: 2rem; 
+    position: absolute;
+    right: -2rem;
+    top: -10rem;
+    transform: translateY(10%);
+    min-width: 31rem;
+    padding: 2rem;
+}
+
+
+.image-label{
+    position: absolute;
+    left: 4%;
+}
+
+.image-selection-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.file-selector,.url-selector{
+    color: #fff;
+    font-size: smaller;
+    margin: 0.5rem;
+    cursor: pointer;
+    border: 1px solid #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.file-input,.url-input{
+    display: none;
+    margin: 1rem;
+    margin-left: 20%;
+}
+
+.file-selector:hover,.url-selector:hover{
+    scale: 1.1;
+}
+
+.url-link{
+    color: #272727;
+    opacity: 0.7;
+    position: absolute;
+    left: 1rem;
+    font-size: smaller;
+}
+
+
+.file-input{
+    font-size: 2.5rem;
+    color: #fff;
+    font-style: italic;
+}
+
+.add-right label{
+    font-size: 3rem;
+}
+
+.add-right textarea{
+    border-radius: 1rem;
+    width: 51rem;
+    height: 14rem;
+    transform: translateY(10%);
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
+
+.add-right-container{
+    margin-top: 10rem;
+}
+
+
+.button{
+    position: absolute;
+    bottom: 7rem;
+    right: 4rem;
+    background-color: #E0872E;
+    padding: 0.5rem;
+}
+
+
+.button:hover{
+    scale: 1.1;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .add-title{
+        font-size: 18px;
+    }
+    .add-right{
+    background-color:#272727;
+    color: #E0872E
+    }
+    .button{
+        background-color: transparent;
+    }
+  }

@@ -1,0 +1,27 @@
+
+
+/* majority of the css here is being pulled from create-recipe component  */
+
+.edit-title{
+    position: absolute;
+    top: 0;
+    transform: translateX(-39.5%);
+}
+
+
+.edit-left{
+    background-color: #E0872E;
+    border-radius: 2rem;
+    height: 73rem;
+    margin-top: 12rem;
+    width: 40%;
+    position: absolute;
+    transform: translateY(10%);
+    min-width: 50rem;
+    padding: 4rem;
+    font-size: 4rem;
+}
+
+.left-container{
+    margin-top: 2rem;
+}
