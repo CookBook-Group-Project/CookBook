@@ -9,12 +9,14 @@
     z-index: 0;
 }
 
+
+
 .register-form{
     width: 55%;
     padding: 7rem;
     border-radius: 2rem;
     position: absolute;
-    top: 24%;
+    top: 18%;
     right: 6%;
     background-color: #E0872E;
     border: 1px solid #fff;
@@ -58,7 +60,7 @@
 .registration-error-container{
     position: absolute;
     right: 0;
-    top: 5rem;
+    top: 10rem;
     width: 38%;
     border-top: 1px solid #fff;
 }

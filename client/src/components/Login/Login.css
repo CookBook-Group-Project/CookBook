@@ -9,12 +9,12 @@
     z-index: 0;
 }
 
-.register-form{
+.login-form{
     width: 55%;
     padding: 7rem;
     border-radius: 2rem;
     position: absolute;
-    top: 24%;
+    top: 14%;
     right: 6%;
     background-color: #E0872E;
     border: 1px solid #fff;
@@ -23,9 +23,21 @@
 }
 
 
+.login-button{
+    background-color: transparent;
+    border: 1px solid #fff;
+    margin-top: 2rem;
+    transform: translateX(60rem);
+    font-size: 3rem;
+    padding: 0.5rem;
+    color: #fff;
+}
 
-.register-form input{
+
+
+.register-form input, .login-form input{
     width: 60%;
+    font-size: 2rem;
 }
 
 .register-form label{
@@ -55,14 +67,17 @@
 }
 
 
-.registration-error-container{
+
+
+
+.login-error-container{
     position: absolute;
     right: 0;
-    top: 5rem;
+    top: 15rem;
     width: 38%;
     border-top: 1px solid #fff;
+    color: #fff;
 }
-
 
 .registration-error-container p{
     font-size: 3rem;
@@ -76,7 +91,7 @@
     padding: 4rem;
     border-radius: 2rem;
     position: absolute;
-    top: 30%;
+    top: 32%;
     right: 3%;
     background-color: #fff;
     box-shadow: 1px 1px 4px 1px black;

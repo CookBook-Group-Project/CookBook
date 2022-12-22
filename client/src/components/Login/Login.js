@@ -30,17 +30,17 @@ const Login = () => {
   return (
     <div className='bg'>
     <Nav></Nav>
-        <form className='register-form' onSubmit={loginHandler} >
+        <form className='login-form' onSubmit={loginHandler} >
         <h4 className='registration-title'>Login</h4>
         <div className='register-card'>
             <label className='mt-2'>Email:</label>
             <input type='email' className='form-control' autoComplete='email' onChange={(e) => setEmail(e.target.value)}></input>
             <label className='mt-2'>Password:</label>
             <input type='password' className='form-control' autoComplete='password' onChange={(e) => setPassword(e.target.value)}></input>
-            <div className='registration-error-container'>
+            <div className='login-error-container'>
                 <p>{errors}</p>
             </div>
-            <button className='btn btn-primary mt-3'>Login</button>
+            <button className='login-button'>Login</button>
             </div>
         </form>
         <div className='login-tab'>
