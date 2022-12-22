@@ -14,7 +14,8 @@ export const UserRecipes = () => {
     const {id} = useParams();
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/recipe/user/${id}`)
+        axios
+        .get(`http://localhost:8000/api/recipe/user/${id}`, {withCredentials:true})
         .then(response => {
             console.log(response.data)
             setUserRecipe(response.data)
@@ -29,7 +30,7 @@ export const UserRecipes = () => {
     }
 
     const deleteRecipe = recipeId => {
-        axios.delete('http://127.0.01:8000/api/delete/' + recipeId)
+        axios.delete(`http://localhost:8000/api/delete/${recipeId}`, {withCredentials:true, credentials:'include'})
         .then(response => {
             console.log(response)
             removeRecipe(recipeId)

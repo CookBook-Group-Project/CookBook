@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import { UserContext } from "../../contexts/UserContext";
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import Nav from '../Nav/Nav'
 
 export const UpdateRecipe = () => {
     const {id} = useParams();
@@ -13,7 +14,7 @@ export const UpdateRecipe = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/recipe/${id}`)
+        axios.get(`http://localhost:8000/api/recipe/${id}`, {withCredentials:true})
         .then(response => {
             console.log(response)
             setTitle(response.data.title)
@@ -33,7 +34,7 @@ export const UpdateRecipe = () => {
             instructions,
             ingredients,
             cookTime
-        })
+        },{withCredentials:true, credentials:'include'})
         .then(response => {
             console.log(response)
             navigate('/explore')
@@ -54,6 +55,7 @@ export const UpdateRecipe = () => {
 
     return (
         <div>
+            <Nav />
             <form onSubmit={updateRecipe} style={{display:'flex',flexDirection:'column'}}>
                 {errors.map((error,index) => <p key = {index}>{error}</p>)}
                 <label>Recipe Name</label>
