@@ -6,7 +6,18 @@ import { UserContext } from "../../contexts/UserContext";
 
 
 const RecipeTile = (props) => {
-    
+
+
+    // const handleImage = () =>{
+    // const  img = document.getElementById("image")
+    // img.addEventListener('error', function(event) {
+    //     event.target.src = 'https://images.unsplash.com/photo-1516824467205-afa656d31a79?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Zm9vZCUyMGxvZ298ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'
+    //     event.onerror = 'null'
+    // })
+    // }
+
+
+
     const {recipe} = props
     const { loggedUser, setLoggedUser} = useContext(UserContext);
 
@@ -14,8 +25,16 @@ const RecipeTile = (props) => {
     return (
         <div class="recipe-tile-container">
             <div class="recipe-tile-card">
-                <img class="recipe-tile-image" src={recipe.mainImage} alt='recipe'></img>
-                {/* <img class="recipe-tile-image" src='https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60' alt='recipe'></img> */}
+                <img
+                    class="recipe-tile-image"
+                    src={recipe.mainImage} 
+                    onError={event => {
+                        event.target.src = "https://images.unsplash.com/photo-1516824467205-afa656d31a79?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Zm9vZCUyMGxvZ298ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+                        event.onerror = null
+                    }}
+                    alt='recipe'>
+                </img>
+                
                 <div class="recipe-tile-text">
                     <div class="card--title">
                         {recipe.title}
