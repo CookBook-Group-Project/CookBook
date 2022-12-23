@@ -38,12 +38,20 @@ const RecipeTile = (props) => {
                 <div class="recipe-tile-text">
                     <div class="card--title">
                         {recipe.title}
+                        <hr></hr>
                     </div>
+                    <div className='card-ingredients-container'>
+                        <span className='ingredients-span'>Ingredients: </span>{recipe.ingredients}
+                    </div>
+                    <hr></hr>
                     <div class="card--sub">
-                        {recipe.instructions}
+                        <span className='directions-span'>Directions:</span> {recipe.instructions}
                     </div>
                     <Link to={`/recipe/${recipe._id}`} className='cta'>View Recipe</Link>
-                    <p className='recipe-tile-author'>{recipe.creatorName}</p>
+                    <p className='recipe-tile-author'>
+                    <hr></hr>
+                    <span className='created-by'>Recipe Created By: </span>
+                    {recipe.creatorName}</p>
                 </div>
             </div>
         </div>

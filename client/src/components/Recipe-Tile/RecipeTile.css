@@ -21,7 +21,7 @@
     background-color: #fafafa;
     border: 2px solid rgba(0, 0, 0, .10);
     width: 40rem;
-    min-height: 63rem;
+    height: 63rem;
     box-shadow: 2px 4px 24px rgba(0, 0, 0, 0.15);
 }
 
@@ -31,6 +31,7 @@
     font-weight: 700;
     font-size: 2.4rem;
     cursor: default;
+    margin-top: 1.4rem;
 }
 
 .card--sub{
@@ -41,7 +42,6 @@
     margin-bottom: 40px;
     cursor: default;
     flex-wrap: wrap;
-    height: 10rem;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -52,12 +52,25 @@
 }
 
 
+.card-ingredients-container{
+    font-size: 16px;
+}
+
+
+
+.directions-span,.ingredients-span{
+    font-size: 16px;
+    color: #E0872E;
+    font-weight: bold;
+}
 
 .recipe-tile-image{
     background-size: cover;
-    min-width: 100%;
+    /* min-width: 100%;
+    height: 34rem; */
+    width: 396px;
+    height: 300px;
     margin: 0 auto;
-    height: 34rem;
     z-index: 0;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
@@ -73,16 +86,23 @@
 
 .recipe-tile-author{
     font-size: 2rem;
-    margin-left: 58%;
-    transform: translateY(-90%);
-    color: gray;
+    color: #E0872E;
     cursor: default;
     flex-wrap: wrap;
+    position: absolute;
+    margin: 0 auto;
+    transform: translateY(26rem);
 }
 
 
+.created-by{
+    font-size: smaller;
+    color: gray;
+}
+
 .cta {
     justify-self: flex-end;
+    position: absolute;
     text-decoration: none;
     color: #f2f2f2;
     background-color: #E0872E;
@@ -91,7 +111,10 @@
     padding: .4rem 0;
     width: 19rem;
     text-align: center;
+    margin-left: 20rem;
     box-shadow: 2px 4px 12px rgba(29, 29, 29, 0.2);
+
+
 }
 
 .cta:hover {
