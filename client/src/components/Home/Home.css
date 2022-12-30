@@ -142,8 +142,9 @@ img {
 
 
 .smoke {
-opacity: 8%;
-min-width: 3900px;
+opacity: 0.4;
+/* min-width: 3900px; */
+min-width: 100vw;
 position: relative;
 animation-name: smoke;
 animation-duration: 8s; 
@@ -151,6 +152,7 @@ animation-direction: alternate;
 animation-iteration-count: infinite;
 animation-timing-function: linear;
 z-index: 100;
+margin-bottom: 10rem;
 }
 
 @keyframes smoke {
