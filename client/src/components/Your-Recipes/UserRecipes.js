@@ -11,9 +11,15 @@ export const UserRecipes = () => {
 
     const {loggedUser} = useContext(UserContext);
     const [userRecipe,setUserRecipe] = useState([])
-    const {id} = useParams();
+    let {id} = useParams();
 
+    // 639fd3ce9d1a54c764f79aed
+    // 63c8f7919bdb29714a11ca4d
+    
     useEffect(() => {
+        if (id != loggedUser.id){
+            id = loggedUser.id
+        }
         axios
         .get(`http://localhost:8000/api/recipe/user/${loggedUser.id}`, {withCredentials:true})
         .then(response => {
@@ -23,7 +29,7 @@ export const UserRecipes = () => {
         .catch(error => {
             console.log(error, 'nope')
         })
-    },[])
+    },[id, loggedUser.id])
 
     const removeRecipe = recipeId => {
         setUserRecipe(userRecipe.filter(recipe => recipe._id !== recipeId));
