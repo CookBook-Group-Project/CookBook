@@ -15,7 +15,7 @@ export const UserRecipes = () => {
 
     useEffect(() => {
         axios
-        .get(`http://localhost:8000/api/recipe/user/${id}`, {withCredentials:true})
+        .get(`http://localhost:8000/api/recipe/user/${loggedUser.id}`, {withCredentials:true})
         .then(response => {
             console.log(response.data)
             setUserRecipe(response.data)

@@ -47,12 +47,12 @@ const Register = () => {
                 onChange={(e) => setEmail(e.target.value)}/>
                 <label className='mt-2'>Password:</label>
                 <input 
-                type='text' 
+                type='password' 
                 className='form-control' 
                 onChange={(e) => setPassword(e.target.value)}/>
                 <label className='mt-2'>Confirm Password:</label>
                 <input 
-                type='text'
+                type='password'
                 className='form-control' 
                 onChange={(e) => setConfirmPassword(e.target.value)}/>
                 <div className='registration-error-container'>
