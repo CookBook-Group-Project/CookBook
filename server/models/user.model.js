@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
-const uniqueValidator = require('mongoose-unique-validator')
+const uniqueValidator = require('mongoose-unique-validator').default
 
 const UserSchema = new mongoose.Schema({
 
@@ -37,27 +37,19 @@ const UserSchema = new mongoose.Schema({
 
 
 UserSchema.virtual('confirmPassword')
-.get(()=>this._confirmPassword)
-.set(value=>this._confirmPassword = value)
+.get(function(){ return this._confirmPassword })
+.set(function(value){ this._confirmPassword = value })
 
 
-UserSchema.pre('validate', function(next){
+UserSchema.pre('validate', function(){
     if(this.password !== this.confirmPassword){
         this.invalidate('confirmPassword', 'Password and Confirm Password must match.')
     }
-    next()
 })
 
 
-UserSchema.pre('save', async function(next){
-    try{
-        const hashedPassword = await bcrypt.hash(this.password,10)
-        console.log('Hashed password:', hashedPassword)
-        this.password = hashedPassword
-        next()
-    }catch{
-        console.log('Error in save', error)
-    }
+UserSchema.pre('save', async function(){
+    this.password = await bcrypt.hash(this.password, 10)
 })
 
 UserSchema.plugin(uniqueValidator, { message: 'Username or email already registered.' })
