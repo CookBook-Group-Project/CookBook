@@ -1,8 +1,8 @@
 import Nav from '../Nav/Nav'
 import './RecipeCard.css'
-import axios from "axios";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import React, { useEffect, useState, useContext } from "react";
+import api from "../../config/api";
+import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 
 const RecipeCard = (props) => {
 
@@ -12,38 +12,16 @@ const RecipeCard = (props) => {
     const [notFoundError, setNotFoundError] = useState("");
 
     useEffect(() => {
-        axios
-            .get(`http://localhost:8000/api/recipe/${id}`, {
-            withCredentials: true,
-            })
+        api
+            .get(`/api/recipe/${id}`)
             .then((res) => {
-            console.log(res);
             setRecipe(res.data);
             })
             .catch((err) => {
             console.log(err);
             setNotFoundError("The recipe you are looking for does not exist.");
             });
-        }, [ ]);
-
-    //We pull down the list of all recipes via props so that cards can be generated for each.
-    // const {recipe} = props
-
-
-    // Switching between image and directions view 
-    const handleClick = () =>{
-        const recImg = document.querySelector('.image-container')
-        // const directions = document.querySelector('.directions-container')
-        const show = document.querySelector('.show-directions')
-        const hidden = document.querySelector('.hidden-container')
-
-
-        recImg.style.display = 'none'
-        // directions.style.display = 'block'
-        show.innerHTML = 'Currently Cooking'
-        hidden.style.display = 'block'
-    }
-
+        }, [id]);
 
     return (
         <div>

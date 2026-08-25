@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { NavLink, useNavigate } from 'react-router-dom';
 import './Nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import logo from './Images/logo.png'
-import axios from 'axios'
+import api from "../../config/api";
 
 
 
@@ -16,37 +16,26 @@ const { loggedUser, setLoggedUser} = useContext(UserContext);
 const navigate = useNavigate()
 
 useEffect(() => {
-  axios
-    .get("http://localhost:8000/api/getLoggedUser", { withCredentials: true })
-    .then(
-      (res) => (
-        // console.log(res),
-        setLoggedUser({
-          id: res.data.user._id,
-          username: res.data.user.username,
-        })
-      )
+  api
+    .get("/api/getLoggedUser")
+    .then((res) =>
+      setLoggedUser({
+        id: res.data.user._id,
+        username: res.data.user.username,
+      })
     )
     .catch((err) => console.log(err));
-}, []);
+}, [setLoggedUser]);
 
   const handleClick = () =>{
-    const showBtn = document.querySelector(".btn-bars"),
-    closeBtn = document.querySelector(".btn-close"),
-    navMenu = document.querySelector(".navbar-collapse");
-  showBtn.addEventListener("click", () => {
-    navMenu.classList.add("showMenu");
-  });
-  closeBtn.addEventListener("click", () => {
-    navMenu.classList.remove("showMenu");
-  });
+    const navMenu = document.querySelector(".navbar-collapse");
+    navMenu.classList.toggle("showMenu");
   }
 
   const handleLogout = (e) => {
-    axios
-    .get("http://localhost:8000/api/logout", { withCredentials: true })
-    .then((res) => {
-      console.log("Logged out on front end");
+    api
+    .get("/api/logout")
+    .then(() => {
       setLoggedUser("");
       navigate("/");
     })
@@ -63,7 +52,7 @@ useEffect(() => {
           <span><FontAwesomeIcon icon={faBars}/></span>
         </button>
       <div class="navbar-collapse">
-        <span class="btn-close">
+        <span class="btn-close" onClick={handleClick}>
           <i class='bx bx-x'></i>
         </span>
         <ul class="navbar-nav">

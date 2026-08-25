@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import './Home.css'
 import Nav from '../Nav/Nav'
-import axios from 'axios'
+import api from "../../config/api";
 import circle from './Images/orange-circle.png'
 import family from './Images/family.png'
 import quick from './Images/quick.png'
@@ -15,9 +15,8 @@ const Home = () => {
 
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/fiveRecipes', {withCredentials: true, credentials: 'include'})
+    api.get('/api/fiveRecipes')
     .then((res) => {
-        console.log(res)
         setRecipes(res.data)
     }).catch((err) => {
         console.log(err)

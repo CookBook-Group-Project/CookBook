@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useContext } from 'react'
-import { UserContext } from "../../contexts/UserContext";
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import axios from 'axios';
+import api from "../../config/api";
 import Nav from '../Nav/Nav'
 import './UpdateRecipe.css'
 
@@ -18,39 +17,38 @@ export const UpdateRecipe = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/recipe/${id}`, {withCredentials:true})
+        api.get(`/api/recipe/${id}`)
         .then(response => {
-            console.log(response)
             setTitle(response.data.title)
             setInstructions(response.data.instructions)
             setCookTime(response.data.cookTime)
             setPrepTime(response.data.prepTime)
             setServes(response.data.serves)
             setIngredients(response.data.ingredients)
+            setMainImage(response.data.mainImage)
         })
         .catch(error => {
             console.log(error)
         })
-    },[])
+    },[id])
 
     const updateRecipe = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:8000/api/update/${id}`, {
+        api.put(`/api/update/${id}`, {
             title,
             instructions,
             serves,
             prepTime,
             ingredients,
-            cookTime
-        },{withCredentials:true, credentials:'include'})
-        .then(response => {
-            console.log(response)
+            cookTime,
+            mainImage
+        })
+        .then(() => {
             navigate('/explore')
         })
         .catch(error => {
             console.log(error, 'failed to update')
             const errorResponse = error.response.data.errors;
-            console.log(errorResponse)
             const errorArr = [];
             for (const key of Object.keys(errorResponse)) {
                 errorArr.push(errorResponse[key].message);
@@ -111,7 +109,7 @@ export const UpdateRecipe = () => {
                         <span className="url-selector" onClick={handleUrl}>url</span>
                     </div>
                         <input type ='file' className="file-input" onChange = {(e) => setMainImage(e.target.value)}/>
-                        <input type ='text' className="url-input" onChange = {(e) => setMainImage(e.target.value)}/>
+                        <input type ='text' className="url-input" value={mainImage} onChange = {(e) => setMainImage(e.target.value)}/>
                     <hr></hr>
 
                     <label className="">Ingredients</label>
