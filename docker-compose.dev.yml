@@ -1,0 +1,12 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: cookbook-mongo-dev
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data-dev:/data/db
+
+volumes:
+  mongo-data-dev:
