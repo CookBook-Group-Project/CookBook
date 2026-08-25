@@ -15,6 +15,7 @@ import NotFound from "./components/Not-Found/NotFound";
 
 function App() {
   const [loggedUser, setLoggedUser] = useState("");
+  const [authChecked, setAuthChecked] = useState(false);
 
   useEffect(() => {
     api
@@ -25,8 +26,13 @@ function App() {
           username: res.data.user.username
         })
       )
-      .catch((err) => console.log("logged user error", err));
+      .catch((err) => console.log("logged user error", err))
+      .finally(() => setAuthChecked(true));
   }, []);
+
+  if (!authChecked) {
+    return null;
+  }
 
   return (
     <div className="App">

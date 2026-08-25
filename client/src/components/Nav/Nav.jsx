@@ -47,57 +47,57 @@ useEffect(() => {
 
   return (
     <div className='nav-bar'>
-      <nav class="navbar">
-        <button type="button" class="btn-bars" onClick={handleClick}> 
+      <nav className="navbar">
+        <button type="button" className="btn-bars" onClick={handleClick}>
           <span><FontAwesomeIcon icon={faBars}/></span>
         </button>
-      <div class="navbar-collapse">
-        <span class="btn-close" onClick={handleClick}>
-          <i class='bx bx-x'></i>
+      <div className="navbar-collapse">
+        <span className="btn-close" onClick={handleClick}>
+          <i className='bx bx-x'></i>
         </span>
-        <ul class="navbar-nav">
+        <ul className="navbar-nav">
           <p className="logged-user">{loggedUser.username}</p>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink to='/' className='nav-link'>Home</NavLink>
             </li>
-          <li class="nav-item">
+          <li className="nav-item">
           <NavLink to='/explore' className='nav-link'>Explore Recipes</NavLink>
           </li>
           {loggedUser&&
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink to={`/recipes/loggedUser/${loggedUser.id}`} className="nav-link">Your Recipes</NavLink>
             </li>
           }
           {loggedUser&&
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink to='/addRecipe' className='nav-link'>Add A Recipe</NavLink>
             </li>
           }
-          {/* <li class="nav-item">
-            <a href="#" class="nav-link">Settings</a>
+          {/* <li className="nav-item">
+            <a href="#" className="nav-link">Settings</a>
           </li> */}
-          {!loggedUser? 
-          <li class="nav-item">
+          {!loggedUser?
+          <li className="nav-item">
             <NavLink to='/login' className='nav-link'>Login or Register</NavLink>
           </li>
           :
-          <li class="nav-item">
-            <a href="#" onClick={handleLogout} class="nav-link">Log Out</a>
+          <li className="nav-item">
+            <a href="#" onClick={handleLogout} className="nav-link">Log Out</a>
           </li>
           }
         </ul>
-      <div class="nav-social-icon">
-        <a href="#"><i class='bx bxl-facebook-circle'></i></a>
-        <a href="#"><i class='bx bxl-twitter'></i></a>
-        <a href="#"><i class='bx bxl-pinterest-alt'></i></a>
-        <a href="#"><i class='bx bxl-instagram'></i></a>
+      <div className="nav-social-icon">
+        <a href="#"><i className='bx bxl-facebook-circle'></i></a>
+        <a href="#"><i className='bx bxl-twitter'></i></a>
+        <a href="#"><i className='bx bxl-pinterest-alt'></i></a>
+        <a href="#"><i className='bx bxl-instagram'></i></a>
     </div>
   </div>
   </nav>
-    <section class="main">
-      <a href="/" class="site-name">
+    <section className="main">
+      <a href="/" className="site-name">
       <img src={logo} alt='logo' className='logo'></img>
-        CookBook 
+        CookBook
         <span>.</span>
       </a>
     </section>

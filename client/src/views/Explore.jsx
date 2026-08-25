@@ -25,11 +25,11 @@ const Explore = () => {
       <div className='animation-container'>
       <h1>Let's Cook...</h1>
         <div id="cooking">
-          <div class="bubble"></div>
-          <div class="bubble"></div>
-          <div class="bubble"></div>
-          <div class="bubble"></div>
-          <div class="bubble"></div>
+          <div className="bubble"></div>
+          <div className="bubble"></div>
+          <div className="bubble"></div>
+          <div className="bubble"></div>
+          <div className="bubble"></div>
           <div id="area">
             <div id="sides">
               <div id="pan"></div>
