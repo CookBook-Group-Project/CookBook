@@ -1,7 +1,7 @@
-const UserController = require('../controllers/user.controller');
-const {authenticate, isLoggedIn} = require('../config/jwt.config')
+import UserController from '../controllers/user.controller.js'
+import {isLoggedIn} from '../config/jwt.config.js'
 
-module.exports = (app) => {
+export default (app) => {
     app.post('/api/register', UserController.registerUser)
     app.post('/api/login', UserController.loginUser)
     app.get('/api/getLoggedUser', isLoggedIn)

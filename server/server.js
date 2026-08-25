@@ -1,9 +1,12 @@
-const express = require('express');
-const cors = require('cors');
-const app = express();
-const cookieParser = require('cookie-parser')
-require('dotenv').config()
-require('./config/mongoose.config');
+import 'dotenv/config'
+import express from 'express'
+import cors from 'cors'
+import cookieParser from 'cookie-parser'
+import './config/mongoose.config.js'
+import recipeRoutes from './routes/recipe.routes.js'
+import userRoutes from './routes/user.routes.js'
+
+const app = express()
 
 const PORT = process.env.PORT || 8000
 
@@ -23,11 +26,10 @@ app.use(cors({
 );
 
 
-require('./routes/recipe.routes')(app);
-require('./routes/user.routes')(app)
+recipeRoutes(app);
+userRoutes(app)
 
 
 app.listen(PORT, ( ) => {
     console.log(`Server is up on port ${PORT}`)
 })
-

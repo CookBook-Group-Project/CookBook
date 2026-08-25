@@ -1,7 +1,7 @@
-const Recipe = require('../models/recipe.model')
-const User = require('../models/user.model')
+import Recipe from '../models/recipe.model.js'
+import User from '../models/user.model.js'
 
-module.exports = {
+export default {
 
     getAllRecipes: (req,res)=>{
         Recipe.find().sort({createdAt:-1})

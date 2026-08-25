@@ -1,8 +1,9 @@
-const jwt = require('jsonwebtoken')
-const SECRET = process.env.SECRET_KEY
-const User = require('../models/user.model')
+import jwt from 'jsonwebtoken'
+import User from '../models/user.model.js'
 
-module.exports.authenticate = (req, res, next) => {
+const SECRET = process.env.SECRET_KEY
+
+export const authenticate = (req, res, next) => {
     jwt.verify(req.cookies.userToken, SECRET, {algorithms:['HS256']}, (err, payload) => {
         if (err) {
             res.status(401).json({verified:false});
@@ -13,7 +14,7 @@ module.exports.authenticate = (req, res, next) => {
     });
 }
 
-module.exports.isLoggedIn = (req, res) => {
+export const isLoggedIn = (req, res) => {
     jwt.verify(req.cookies.userToken, SECRET, {algorithms:['HS256']}, (err, payload) => {
         if (err) {
             return res.status(401).json({verified:false});

@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
-const uniqueValidator = require('mongoose-unique-validator').default
+import mongoose from 'mongoose'
+import bcrypt from 'bcrypt'
+import uniqueValidator from 'mongoose-unique-validator'
 
 const UserSchema = new mongoose.Schema({
 
@@ -54,4 +54,4 @@ UserSchema.pre('save', async function(){
 
 UserSchema.plugin(uniqueValidator, { message: 'Username or email already registered.' })
 
-module.exports = mongoose.model('User', UserSchema)
+export default mongoose.model('User', UserSchema)
