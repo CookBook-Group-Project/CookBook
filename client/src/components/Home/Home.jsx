@@ -67,7 +67,7 @@ const Home = () => {
                 <div className="filledbar"></div>
               </div>
               <div className="home-cards-image-container">
-                <img src={recipe.mainImage}
+                <img src={recipe.mainImage || undefined}
                                     onError={event => {
                         event.target.src = "https://images.unsplash.com/photo-1516824467205-afa656d31a79?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Zm9vZCUyMGxvZ298ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
                         event.onerror = null
