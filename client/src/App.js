@@ -1,8 +1,9 @@
 import "./App.css";
-import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
+// setting BrowserRouter as Router breaks the app. -CS
+import {BrowserRouter, Routes, Route, Link, Navigate} from 'react-router-dom'
 import { useState, useEffect } from "react";
 import { UserContext } from "./contexts/UserContext";
-import api from "./config/api";
+import axios from 'axios'
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Home from './components/Home/Home'
@@ -13,33 +14,35 @@ import {UpdateRecipe}  from "./components/Update-Recipe/UpdateRecipe";
 import { UserRecipes } from "./components/Your-Recipes/UserRecipes";
 import NotFound from "./components/Not-Found/NotFound";
 
+// import NavBar from './components/Nav/Nav'
+
+
+
 function App() {
   const [loggedUser, setLoggedUser] = useState("");
-  const [authChecked, setAuthChecked] = useState(false);
 
   useEffect(() => {
-    api
-      .get("/api/getLoggedUser")
-      .then((res) =>
-        setLoggedUser({
-          id: res.data.user._id,
-          username: res.data.user.username
-        })
+    axios
+      .get("http://localhost:8000/api/getLoggedUser", { withCredentials: true })
+      .then(
+        (res) => (
+          console.log("logged user info", res),
+          setLoggedUser({
+            id: res.data.user._id,
+            username: res.data.user.username
+            // recipes: res.data.user.recipes
+          })
+        )
       )
-      .catch((err) => console.log("logged user error", err))
-      .finally(() => setAuthChecked(true));
+      .catch((err) => console.log("logged user error", err));
   }, []);
-
-  if (!authChecked) {
-    return null;
-  }
 
   return (
     <div className="App">
       <UserContext.Provider value={{loggedUser, setLoggedUser}}>
       <BrowserRouter>
         <Routes>
-          {loggedUser?
+          {loggedUser!=null?
           <>
             <Route path='/' element={<Home/>} />
             <Route path='/login' element={<Login/>} />
