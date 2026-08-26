@@ -1,6 +1,6 @@
-import mongoose from 'mongoose'
-import bcrypt from 'bcrypt'
-import uniqueValidator from 'mongoose-unique-validator'
+const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
+const uniqueValidator = require('mongoose-unique-validator')
 
 const UserSchema = new mongoose.Schema({
 
@@ -37,21 +37,29 @@ const UserSchema = new mongoose.Schema({
 
 
 UserSchema.virtual('confirmPassword')
-.get(function(){ return this._confirmPassword })
-.set(function(value){ this._confirmPassword = value })
+.get(()=>this._confirmPassword)
+.set(value=>this._confirmPassword = value)
 
 
-UserSchema.pre('validate', function(){
+UserSchema.pre('validate', function(next){
     if(this.password !== this.confirmPassword){
         this.invalidate('confirmPassword', 'Password and Confirm Password must match.')
     }
+    next()
 })
 
 
-UserSchema.pre('save', async function(){
-    this.password = await bcrypt.hash(this.password, 10)
+UserSchema.pre('save', async function(next){
+    try{
+        const hashedPassword = await bcrypt.hash(this.password,10)
+        console.log('Hashed password:', hashedPassword)
+        this.password = hashedPassword
+        next()
+    }catch{
+        console.log('Error in save', error)
+    }
 })
 
 UserSchema.plugin(uniqueValidator, { message: 'Username or email already registered.' })
 
-export default mongoose.model('User', UserSchema)
+module.exports = mongoose.model('User', UserSchema)

@@ -1,13 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { useNavigate } from 'react-router-dom';
-import api from "../../config/api";
+import axios from 'axios'
 import './AddRecipe.css'
 import Nav from "../Nav/Nav";
 
 export const AddRecipe = () => {
 
-    const { loggedUser } = useContext(UserContext);
+    const { loggedUser, setLoggedUser} = useContext(UserContext);
 
     const navigate = useNavigate()
 
@@ -22,9 +22,24 @@ export const AddRecipe = () => {
 
     const [errors, setErrors] = useState([])
 
+    // useEffect(() => {
+    //     axios
+    //         .get("http://localhost:8000/api/getLoggedUser", { withCredentials: true })
+    //         .then(
+    //             (res) => (
+    //             // console.log(res),
+    //             setLoggedUser({
+    //             id: res.data.user._id,
+    //             username: res.data.user.username,
+    //             })
+    //         )
+    //         )
+    //         .catch((err) => console.log(err));
+    // }, []);
+
     const addRecipe = (e) => {
         e.preventDefault();
-        api.post('/api/addRecipe', {
+        axios.post('http://localhost:8000/api/addRecipe', {
             title,
             ingredients,
             instructions,
@@ -34,14 +49,16 @@ export const AddRecipe = () => {
             mainImage,
             creatorName:loggedUser.username,
             creator: loggedUser.id
-        })
+        },{withCredentials:true, credentials:'include'})
         .then(response => {
+            console.log(response.data)
             setNewRecipe([...newRecipe,response.data])
             navigate('/explore')
         })
         .catch(error => {
             console.log(error, 'failed to add')
             const errorResponse = error.response.data.errors;
+            console.log(errorResponse)
             const errorArr = [];
             for (const key of Object.keys(errorResponse)) {
                 errorArr.push(errorResponse[key].message);

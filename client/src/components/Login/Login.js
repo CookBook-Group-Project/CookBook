@@ -1,11 +1,11 @@
-import api from "../../config/api";
+import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import Nav from '../Nav/Nav'
 import './Login.css'
 
 const Login = () => {
-
+  
   const navigate = useNavigate()
 
   const [email, setEmail] = useState('')
@@ -14,11 +14,12 @@ const Login = () => {
 
   const loginHandler = (e) => {
         e.preventDefault()
-        api.post("/api/login",{
+        axios.post("http://localhost:8000/api/login",{
             email,
             password,
-        })
-        .then(() => {
+        },{withCredentials:true, credentials:'include'})
+        .then((res) => {
+            console.log("User logged in")
             navigate('/explore')
         }).catch((err) => {
             console.log(err)

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import api from "../config/api";
+import axios from 'axios'
 import RecipeTile from '../components/Recipe-Tile/RecipeTile'
 import Nav from '../components/Nav/Nav'
 
@@ -8,8 +8,9 @@ const Explore = () => {
     const [recipes,setRecipes] = useState([])
 
     useEffect(() => {
-        api.get('/api/allRecipes')
+        axios.get('http://localhost:8000/api/allRecipes', {withCredentials: true, credentials: 'include'})
         .then((res) => {
+            console.log(res)
             setRecipes(res.data)
         }).catch((err) => {
             console.log(err)
@@ -25,11 +26,11 @@ const Explore = () => {
       <div className='animation-container'>
       <h1>Let's Cook...</h1>
         <div id="cooking">
-          <div className="bubble"></div>
-          <div className="bubble"></div>
-          <div className="bubble"></div>
-          <div className="bubble"></div>
-          <div className="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
           <div id="area">
             <div id="sides">
               <div id="pan"></div>

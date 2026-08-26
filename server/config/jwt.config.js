@@ -1,26 +1,27 @@
-import jwt from 'jsonwebtoken'
-import User from '../models/user.model.js'
-
+const jwt = require('jsonwebtoken')
 const SECRET = process.env.SECRET_KEY
+const User = require('../models/user.model')
 
-export const authenticate = (req, res, next) => {
-    jwt.verify(req.cookies.userToken, SECRET, {algorithms:['HS256']}, (err, payload) => {
+module.exports.authenticate = (req, res, next) => {
+    console.log("req.cookies follows", req)
+    jwt.verify(req.cookies.userToken, SECRET, (err, payload) => {
         if (err) {
+            console.log(err)
+            console.log('Authentication error!')
             res.status(401).json({verified:false});
         }else{
             req.Token = payload
+            console.log("Authentication successful!")
             next();
         }
     });
 }
 
-export const isLoggedIn = (req, res) => {
-    jwt.verify(req.cookies.userToken, SECRET, {algorithms:['HS256']}, (err, payload) => {
-        if (err) {
-            return res.status(401).json({verified:false});
-        }
-        User.findById(payload._id)
-        .then(user => res.json({user:user}))
-        .catch(err => res.status(400).json(err));
-    });
+module.exports.isLoggedIn = (req, res) => {
+    const decodedJWT = jwt.decode(req.cookies.userToken, {complete: true });
+    User.findById(decodedJWT.payload._id)
+    .then(user => 
+        // console.log(user)
+        res.json({user:user}))
+    .catch(err => res.status(400).json(err));
 }

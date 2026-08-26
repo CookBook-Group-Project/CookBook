@@ -1,8 +1,8 @@
 import Nav from '../Nav/Nav'
 import './RecipeCard.css'
-import api from "../../config/api";
-import { useParams } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
 
 const RecipeCard = (props) => {
 
@@ -12,16 +12,38 @@ const RecipeCard = (props) => {
     const [notFoundError, setNotFoundError] = useState("");
 
     useEffect(() => {
-        api
-            .get(`/api/recipe/${id}`)
+        axios
+            .get(`http://localhost:8000/api/recipe/${id}`, {
+            withCredentials: true,
+            })
             .then((res) => {
+            console.log(res);
             setRecipe(res.data);
             })
             .catch((err) => {
             console.log(err);
             setNotFoundError("The recipe you are looking for does not exist.");
             });
-        }, [id]);
+        }, [ ]);
+
+    //We pull down the list of all recipes via props so that cards can be generated for each.
+    // const {recipe} = props
+
+
+    // Switching between image and directions view 
+    const handleClick = () =>{
+        const recImg = document.querySelector('.image-container')
+        // const directions = document.querySelector('.directions-container')
+        const show = document.querySelector('.show-directions')
+        const hidden = document.querySelector('.hidden-container')
+
+
+        recImg.style.display = 'none'
+        // directions.style.display = 'block'
+        show.innerHTML = 'Currently Cooking'
+        hidden.style.display = 'block'
+    }
+
 
     return (
         <div>
@@ -69,7 +91,7 @@ const RecipeCard = (props) => {
                         <h3 className='recipe-title'>{recipe.title}</h3>
                         <hr className='recipe-title-divider'></hr>
                         <div className='image-container'>
-                            <img src={recipe.mainImage || undefined}
+                            <img src={recipe.mainImage}
                                 onError={event => {
                                     event.target.src = "https://images.unsplash.com/photo-1516824467205-afa656d31a79?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Zm9vZCUyMGxvZ298ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
                                     event.onerror = null

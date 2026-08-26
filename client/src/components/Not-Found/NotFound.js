@@ -12,11 +12,11 @@ const NotFound = () => {
                 </p>
                 <div className='animation-container-404'>
                     <div id="cooking">
-                        <div className="bubble"></div>
-                        <div className="bubble"></div>
-                        <div className="bubble"></div>
-                        <div className="bubble"></div>
-                        <div className="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
                         <div id="area">
                             <div id="sides">
                                 <div id="pan"></div>

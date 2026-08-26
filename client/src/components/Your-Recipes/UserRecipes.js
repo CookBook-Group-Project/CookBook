@@ -1,7 +1,7 @@
 import React, {useState,useEffect,useContext} from 'react'
-import { Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { UserContext } from '../../contexts/UserContext'
-import api from "../../config/api";
+import axios from 'axios'
 import Nav from '../Nav/Nav'
 import RecipeTile from '../Recipe-Tile/RecipeTile'
 import './UserRecipes.css'
@@ -11,25 +11,34 @@ export const UserRecipes = () => {
 
     const {loggedUser} = useContext(UserContext);
     const [userRecipe,setUserRecipe] = useState([])
+    let {id} = useParams();
 
+    // 639fd3ce9d1a54c764f79aed
+    // 63c8f7919bdb29714a11ca4d
+    
     useEffect(() => {
-        api
-        .get(`/api/recipe/user/${loggedUser.id}`)
+        if (id != loggedUser.id){
+            id = loggedUser.id
+        }
+        axios
+        .get(`http://localhost:8000/api/recipe/user/${loggedUser.id}`, {withCredentials:true})
         .then(response => {
+            console.log(response.data)
             setUserRecipe(response.data)
         })
         .catch(error => {
             console.log(error, 'nope')
         })
-    },[loggedUser.id])
+    },[id, loggedUser.id])
 
     const removeRecipe = recipeId => {
         setUserRecipe(userRecipe.filter(recipe => recipe._id !== recipeId));
     }
 
     const deleteRecipe = recipeId => {
-        api.delete(`/api/delete/${recipeId}`)
-        .then(() => {
+        axios.delete(`http://localhost:8000/api/delete/${recipeId}`, {withCredentials:true, credentials:'include'})
+        .then(response => {
+            console.log(response)
             removeRecipe(recipeId)
         })
         .catch(error => {

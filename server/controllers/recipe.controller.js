@@ -1,7 +1,7 @@
-import Recipe from '../models/recipe.model.js'
-import User from '../models/user.model.js'
+const Recipe = require('../models/recipe.model')
+const User = require('../models/user.model')
 
-export default {
+module.exports = {
 
     getAllRecipes: (req,res)=>{
         Recipe.find().sort({createdAt:-1})
@@ -35,19 +35,27 @@ export default {
 
     addRecipe: async (req,res)=> {
         try{
+            console.log(req.body)
             const newRecipe = new Recipe(req.body);
             await newRecipe.save();
-            const recipeCreator = await User.findById(newRecipe.creator);
-            if(!recipeCreator){
-                return res.status(400).json({error:'Recipe creator does not exist.'})
-            }
-            await recipeCreator.updateOne({recipes:[...recipeCreator.recipes, newRecipe]});
-            res.status(200).json({success:true, data:newRecipe, user:recipeCreator.username});
+            const recipeCreator = await User.findById({_id: newRecipe.creator});
+            // let creatorPush = recipeCreator.recipes.push(newRecipe);
+            let recipeArray = recipeCreator.recipes
+            // await recipeCreator.updateOne()
+            // await recipeCreator
+            await recipeCreator.updateOne({_id: newRecipe.creator, recipes:[...recipeArray, newRecipe]});
+            res.status(200).json({success:true, data:newRecipe, user:newRecipe.creator.username});
         } catch(err){
             console.log(err);
-            res.status(400).json({error: err.message || 'Failed to add recipe.'});
+            res.status(400).json(err);
         }
     },
+        // // console.log(req.body)
+        // Recipe.create(req.body)
+        // .then((result)=>{
+        //     // console.log(result)
+        //     res.json(result)
+        // })
 
     updateRecipe:(req,res)=>{
         Recipe.updateOne({_id:req.params.id}, req.body, {new:true, runValidators:true})
