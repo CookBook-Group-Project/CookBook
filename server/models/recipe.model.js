@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const RecipeSchema = new mongoose.Schema({
 
@@ -37,8 +37,7 @@ const RecipeSchema = new mongoose.Schema({
     },
 
     mainImage:{
-        type: String,
-        // required:[true, 'An Image is required.']
+        type: String
     },
 
     creatorImage:{
@@ -50,27 +49,15 @@ const RecipeSchema = new mongoose.Schema({
     },
 
     creatorName:{
-        type: String,
-        // required:[true, "Must be logged in to post a recipe."]
+        type: String
     },
 
     creator:{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        // required:[true, 'Must be logged in to add a recipe.'],
+        ref: 'User'
     }
-    
-    // postedBy:{
-    //     type: String,
-    //     // required:[true, "Must be logged in to post a recipe."]
-    // },
-
-    // postedByID:{
-    //     type: String,
-    //     // required:[true, "Must be logged in to post a recipe."]
-    // }
 
 },
 {timestamps: true})
 
-module.exports = mongoose.model('Recipe', RecipeSchema)
+export default mongoose.model('Recipe', RecipeSchema)

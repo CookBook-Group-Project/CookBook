@@ -1,9 +1,12 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
-mongoose.connect('mongodb://127.0.0.1/CookBook', {
-    useNewUrlParser:true,
-    useUnifiedTopology:true
-})
+if (!process.env.MONGO_URI) {
+    throw new Error('MONGO_URI environment variable is required')
+}
+
+mongoose.set('strictQuery', false)
+
+mongoose.connect(process.env.MONGO_URI)
 .then(( ) => {
     console.log('Connected to CookBook DB')
 }).catch((err) => {

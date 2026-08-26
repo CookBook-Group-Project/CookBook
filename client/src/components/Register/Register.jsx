@@ -1,6 +1,6 @@
-import axios from 'axios'
+import api from "../../config/api";
 import React from 'react'
-import { isRouteErrorResponse, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import './Register.css'
 import Nav from '../Nav/Nav'
@@ -16,13 +16,13 @@ const Register = () => {
 
     const registrationHandler = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:8000/api/register",{
+        api.post("/api/register",{
             username,
             email,
             password,
             confirmPassword
-        },{withCredentials:true, credentials:'include'})
-        .then((res) => {
+        })
+        .then(() => {
             navigate('/explore')
         }).catch((err) => {
             console.log(err)
